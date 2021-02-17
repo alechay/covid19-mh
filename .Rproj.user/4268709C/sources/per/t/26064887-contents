@@ -1,0 +1,141 @@
+---
+title: "Covid-19 Mental Health"
+output: html_notebook
+---
+
+## Load packages
+```{r}
+library(tidyverse)
+library(readxl)
+library(tibbletime)
+library(lubridate)
+```
+cambridge: 3/1 - 9/30
+grh: 3/5 - 9/5
+smh: 3/5 - 9/5
+
+Observational period between March 5 and September 5, 2020
+```{r}
+# volume data
+cmh_ed <- read_excel('data/ED Volume Cambridge.xlsx')
+grh_ed <- read_excel('data/ED volumes GRH.xlsx')
+smh_ed <- read_excel('data/ED volumes SMH.xlsx')
+
+# mental health data
+cmh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='cmh') %>%
+  pivot_longer(cols = `March 1 - March 7`:`August 30th - September 5th`,
+               names_to='week',
+               values_to='count') %>% 
+  mutate(date=paste(week, Year, sep=' '))
+grh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='grh') %>%
+  pivot_longer(cols = `March 1 - March 7`:`August 30th - September 5th`,
+               names_to='week',
+               values_to='count') %>% 
+  mutate(date=paste(week, Year, sep=' '))
+smh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='smh') %>%
+  pivot_longer(cols = `March 1 - March 7`:`August 30th - September 5th`,
+               names_to='week',
+               values_to='count') %>% 
+  mutate(date=paste(week, Year, sep=' '))
+police <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='pol')
+```
+
+Get total volume
+```{r}
+vol <- smh_ed %>% left_join(grh_ed, by=c("Date of ED visit (reg)" = "Day of Triage_DT")) %>% 
+  left_join(cmh_ed, by=c("Date of ED visit (reg)" = "Triage Date")) %>% 
+  rename(date=`Date of ED visit (reg)`, smh=`# of cases`, grh=`Number of Records`, cmh=Volume) %>% 
+  mutate(total=smh+grh+cmh) %>% 
+  mutate(year=as.factor(year(date)))
+```
+
+ED visits during lockdown
+```{r}
+vol %>% drop_na() %>% 
+  mutate(date = if_else(year==2019, date+years(1), date)) %>%
+  ggplot(aes(x=date, y=total, color=year)) +
+  geom_line() +
+  scale_color_manual(values=c("green", "blue")) +
+  annotate('rect', xmin=as.POSIXct('2020-03-17'), xmax=as.POSIXct('2020-05-04'),
+           ymin=-Inf, ymax=Inf, fill='red', alpha=0.3)
+```
+
+```{r}
+vol %>% mutate(date=as.Date(date)) %>% 
+  filter(date>='2019-03-17' & date<='2020-05-04') %>% 
+  filter(date<='2019-05-04' | date>='2020-03-17') %>% 
+  ggplot(aes(x=total, fill=year)) +
+  geom_histogram()
+```
+
+Poisson ED visits during lockdown
+```{r}
+data <- vol %>% mutate(date=as.Date(date)) %>% 
+  filter(date>='2019-03-17' & date<='2020-05-04') %>% 
+  filter(date<='2019-05-04' | date>='2020-03-17')
+poisson_out <- glm(total ~ year, data=data, family='poisson' )
+summary(poisson_out)
+```
+
+ANOVA ED visits during lockdown
+```{r}
+# Compute the analysis of variance
+res.aov <- aov(total ~ year, data = data)
+summary(res.aov)
+```
+
+```{r}
+get_data <- function(data, type, subtype=NULL) {
+  if (is.null(subtype)) {
+    smh <- data$smh_mh %>%
+      filter(Type==type)
+    grh <- data$grh_mh %>%
+      filter(Type==type)
+    cmh <- data$cmh_mh %>%
+      filter(Type==type)
+  } else {
+    smh <- data$smh_mh %>%
+      filter(Type==type, Subtype==subtype)
+    grh <- data$grh_mh %>%
+      filter(Type==type, Subtype==subtype)
+    cmh <- data$cmh_mh %>%
+      filter(Type==type, Subtype==subtype)
+  }
+  whole <- smh %>% 
+    left_join(grh, by='date') %>% 
+    left_join(cmh, by='date') %>% 
+    mutate(total=count+count.x+count.y) %>% 
+    select(Year, week, total) %>% 
+    mutate(Year=as.factor(Year))
+  return(whole)
+}
+```
+
+Involuntary - Form 1 
+```{r}
+mh <- list(smh_mh=smh_mh, grh_mh=grh_mh, cmh_mh=cmh_mh)
+data <- get_data(mh, 'Form 1 Total')
+
+poisson_out <- glm(total ~ Year, data=data, family='poisson')
+summary(poisson_out)
+```
+
+```{r}
+# Compute the analysis of variance
+res.aov <- aov(total ~ Year, data = data)
+summary(res.aov)
+```
+
+```{r}
+# get_data(mh, 'Substance related')
+smh <- smh_mh %>%
+  filter(Type=='Substance related')
+grh <- grh_mh %>%
+  filter(Type=='Substance related')
+cmh <- cmh_mh %>%
+  filter(Type=='Substance related')
+whole <- smh %>% 
+  left_join(grh, by='date') %>% 
+  left_join(cmh, by='date')
+```
+

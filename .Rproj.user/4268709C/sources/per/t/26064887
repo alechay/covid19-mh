@@ -1,0 +1,26 @@
+{
+    "id": "26064887",
+    "path": "~/r_projects/GitHub/covid19-mh/main.Rmd",
+    "project_path": "main.Rmd",
+    "type": "r_markdown",
+    "hash": "968841890",
+    "contents": "",
+    "dirty": false,
+    "created": 1613444626206.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "chunk_output_type": "inline",
+        "cursorPosition": "138,27",
+        "scrollLine": "124"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1613535676,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1613535676215,
+    "read_only": false,
+    "read_only_alternatives": []
+}

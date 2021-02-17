@@ -1,0 +1,5 @@
+"0","vol <- smh_ed %>% left_join(grh_ed, by=c(""Date of ED visit (reg)"" = ""Day of Triage_DT"")) %>% "
+"0","  left_join(cmh_ed, by=c(""Date of ED visit (reg)"" = ""Triage Date"")) %>% "
+"0","  rename(date=`Date of ED visit (reg)`, smh=`# of cases`, grh=`Number of Records`, cmh=Volume) %>% "
+"0","  mutate(total=smh+grh+cmh) %>% "
+"0","  mutate(year=as.factor(year(date)))"
