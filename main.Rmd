@@ -5,6 +5,7 @@ output: html_notebook
 
 ## Load packages
 ```{r}
+library(plyr)
 library(tidyverse)
 library(readxl)
 library(tibbletime)
@@ -38,9 +39,16 @@ smh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='smh')
                values_to='count')
 
 # Police data
-police <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='pol')
+pol <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='pol') %>%
+  filter(Subtype!='Drug overdose (monthly totals)' & Type!='EMS data') %>% 
+  mutate(`June 21 - June 27`=as.double(`June 21 - June 27`)) %>% 
+  replace(is.na(.), 0) %>%
+  pivot_longer(cols = `March 1 - March 7`:`August 30th - September 5th`,
+               names_to='week',
+               values_to='count') 
 ```
 
+## Figure 1
 Get total volume
 ```{r}
 vol <- smh_ed %>% left_join(grh_ed, by=c("Date of ED visit (reg)" = "Day of Triage_DT")) %>% 
@@ -92,45 +100,58 @@ Before starting to interpret results, let’s check whether the model has over-d
   
 So, to have a more correct standard error we can use a quasi-poisson model:
 ```{r}
-data <- vol %>% mutate(date=as.Date(date)) %>% 
+volume <- vol %>% mutate(date=as.Date(date)) %>% 
   filter(date>='2019-03-17' & date<='2020-05-04') %>% 
   filter(date<='2019-05-04' | date>='2020-03-17')
 
 # Poisson regression
-poisson_out <- glm(total ~ year, family='quasipoisson', data=data)
-summary(poisson_out)
+poisson_vol <- glm(total ~ year, family='quasipoisson', data=volume)
+fig1 <- data.frame(coef(summary(poisson_vol))) %>% 
+  slice(2)
+write_csv(fig1, 'stat_tests/fig1.csv')
+summary(poisson_vol)
 ```
 
+## Figure 2
+Lockdown: 3/17 - 5/4
+Weeks: 
 ```{r}
 get_data <- function(data, type, subtype=NULL) {
+  weeks <- c('March 15 - March 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'April 5 - 11', 'April 12 - 18', 'April 19 - 25', 'April 26 - May 2')
   if (is.null(subtype)) {
     smh <- data$smh_mh %>%
+      filter(week %in% weeks) %>% 
       filter(Type==type) %>% 
       group_by(Year, week) %>% 
       summarize(count=sum(count)) %>% 
       mutate(date=paste(week, Year, sep=' '))
     grh <- data$grh_mh %>%
+      filter(week %in% weeks) %>% 
       filter(Type==type) %>% 
       group_by(Year, week) %>% 
       summarize(count=sum(count)) %>% 
       mutate(date=paste(week, Year, sep=' '))
     cmh <- data$cmh_mh %>%
+      filter(week %in% weeks) %>% 
       filter(Type==type) %>% 
       group_by(Year, week) %>% 
       summarize(count=sum(count)) %>% 
       mutate(date=paste(week, Year, sep=' '))
   } else {
     smh <- data$smh_mh %>%
+      filter(week %in% weeks) %>% 
       filter(Type==type, Subtype==subtype) %>% 
       group_by(Year, week) %>% 
       summarize(count=sum(count)) %>% 
       mutate(date=paste(week, Year, sep=' '))
     grh <- data$grh_mh %>%
+      filter(week %in% weeks) %>% 
       filter(Type==type, Subtype==subtype) %>% 
       group_by(Year, week) %>% 
       summarize(count=sum(count)) %>% 
       mutate(date=paste(week, Year, sep=' '))
     cmh <- data$cmh_mh %>%
+      filter(week %in% weeks) %>% 
       filter(Type==type, Subtype==subtype) %>% 
       group_by(Year, week) %>% 
       summarize(count=sum(count)) %>% 
@@ -153,63 +174,198 @@ mh <- list(smh_mh=smh_mh, grh_mh=grh_mh, cmh_mh=cmh_mh)
 
 Involuntary - Form 1 
 ```{r}
-data <- get_data(mh, 'Form 1 Total')
+involuntary <- get_data(mh, 'Form 1 Total')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_inv <- glm(total ~ Year, data=involuntary, family='poisson')
+summary(poisson_inv)
 ```
 
 Substance related
 ```{r}
-data <- get_data(mh, 'Substance related')
+substance <- get_data(mh, 'Substance related')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_sub <- glm(total ~ Year, data=substance, family='quasipoisson')
+summary(poisson_sub)
 ```
 
 Alcohol Related
 ```{r}
-data <- get_data(mh, 'Substance related', 'Alcohol (separate)')
+alcohol <- get_data(mh, 'Substance related', 'Alcohol (separate)')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_alc <- glm(total ~ Year, data=alcohol, family='quasipoisson')
+summary(poisson_alc)
 ```
 
 Mood related
 ```{r}
-data <- get_data(mh, 'Mood related')
+mood <- get_data(mh, 'Mood related')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_mood <- glm(total ~ Year, data=mood, family='quasipoisson')
+summary(poisson_mood)
 ```
 
 Psychosis related
 ```{r}
-data <- get_data(mh, 'Psychosis related')
+psychosis <- get_data(mh, 'Psychosis related')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_psy <- glm(total ~ Year, data=psychosis, family='quasipoisson')
+summary(poisson_psy)
 ```
 
 Situational crisis
 ```{r}
-data <- get_data(mh, 'Situational crisis')
+situational <- get_data(mh, 'Situational crisis')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_sit <- glm(total ~ Year, data=situational, family='poisson')
+summary(poisson_sit)
 ```
 
 Self harm related
 ```{r}
-data <- get_data(mh, 'Self harm')
+harm <- get_data(mh, 'Self harm')
 
 # Poisson regression
-poisson_out <- glm(total ~ Year, data=data, family='quasipoisson')
-summary(poisson_out)
+poisson_harm <- glm(total ~ Year, data=harm, family='poisson')
+summary(poisson_harm)
 ```
+
+```{r}
+get_fig2 <- function(poisson_fig2) {
+  inv <- data.frame(coef(summary(poisson_fig2$poisson_inv))) %>% 
+    slice(2) %>% 
+    select(z.value, Pr...z..)
+  sub <- data.frame(coef(summary(poisson_fig2$poisson_sub))) %>% 
+    slice(2) %>% 
+    select(t.value, Pr...t..)
+  alc <- data.frame(coef(summary(poisson_fig2$poisson_alc))) %>% 
+    slice(2) %>% 
+    select(t.value, Pr...t..)
+  mood <- data.frame(coef(summary(poisson_fig2$poisson_mood))) %>% 
+    slice(2) %>% 
+    select(t.value, Pr...t..)
+  psy <- data.frame(coef(summary(poisson_fig2$poisson_psy))) %>% 
+    slice(2) %>% 
+    select(t.value, Pr...t..)
+  sit <- data.frame(coef(summary(poisson_fig2$poisson_sit))) %>% 
+    slice(2) %>% 
+    select(z.value, Pr...z..)
+  harm <- data.frame(coef(summary(poisson_fig2$poisson_harm))) %>% 
+    slice(2) %>% 
+    select(z.value, Pr...z..)
+  
+  tot <- rbind.fill(inv, sub, alc, mood, psy, sit, harm)
+  tot$type <- c('Involuntary - Form 1', 'Substance related', 'Alcohol related', 'Mood related', 'Psychosis related', 'Situational crisis', 'Self harm related')
+  return(tot)
+}
+```
+
+```{r}
+poisson_fig2 <- list(poisson_inv=poisson_inv, poisson_sub=poisson_sub, poisson_alc=poisson_alc, poisson_mood=poisson_mood, poisson_psy=poisson_psy, poisson_sit=poisson_sit, poisson_harm=poisson_harm)
+```
+
+```{r}
+fig2 <- get_fig2(poisson_fig2)
+write_csv(fig2, 'stat_tests/fig2.csv')
+```
+
+## Figure 3
+
+```{r}
+weeks <- c('March 15 - March 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'April 5 - 11', 'April 12 - 18', 'April 19 - 25', 'April 26 - May 2')
+```
+
+Suicide
+```{r}
+suicide <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Suicide attempt') %>% 
+  group_by(Year, week) %>% 
+  summarize(count=sum(count))
+
+# Poisson regression
+poisson_sui <- glm(count ~ Year, data=suicide, family='poisson')
+summary(poisson_sui)
+```
+
+Alcohol
+```{r}
+pol_alcohol <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Intoxicated') %>% 
+  group_by(Year, week) %>% 
+  summarize(count=sum(count))
+
+# Poisson regression
+poisson_pol_alc <- glm(count ~ Year, data=pol_alcohol, family='quasipoisson')
+summary(poisson_pol_alc)
+```
+
+Assault
+```{r}
+assault <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Assault') %>% 
+  group_by(Year, week) %>% 
+  summarize(count=sum(count))
+
+# Poisson regression
+poisson_ass <- glm(count ~ Year, data=assault, family='quasipoisson')
+summary(poisson_ass)
+```
+
+Domestic abuse
+```{r}
+domestic <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Domestic dispute') %>% 
+  group_by(Year, week) %>% 
+  summarize(count=sum(count))
+
+# Poisson regression
+poisson_dom <- glm(count ~ Year, data=domestic, family='quasipoisson')
+summary(poisson_dom)
+```
+
+Crisis calls
+```{r}
+crisis <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Crisis call volume') %>% 
+  group_by(Year, week) %>% 
+  summarize(count=sum(count))
+
+# Poisson regression
+poisson_cri <- glm(count ~ Year, data=crisis, family='quasipoisson')
+summary(poisson_cri)
+```
+
+```{r}
+
+sui <- data.frame(coef(summary(poisson_sui))) %>% 
+  slice(2) %>% 
+  select(z.value, Pr...z..)
+pol_alc <- data.frame(coef(summary(poisson_pol_alc))) %>% 
+  slice(2) %>% 
+  select(t.value, Pr...t..)
+ass <- data.frame(coef(summary(poisson_ass))) %>% 
+  slice(2) %>% 
+  select(t.value, Pr...t..)
+dom <- data.frame(coef(summary(poisson_dom))) %>% 
+  slice(2) %>% 
+  select(t.value, Pr...t..)
+cri <- data.frame(coef(summary(poisson_cri))) %>% 
+  slice(2) %>% 
+  select(t.value, Pr...t..)
+
+tot <- rbind.fill(sui, pol_alc, ass, dom, cri)
+tot$type <- c('Suicide', 'Alcohol', 'Assault', 'Domestic Disputes', 'Crisis calls')
+
+write_csv(tot, 'stat_tests/fig3.csv')
+```
+

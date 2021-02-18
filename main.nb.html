@@ -1753,10 +1753,11 @@ summary {
 <h2>Load packages</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwbHlyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(plyr)
+library(tidyverse)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4wIOKUgOKUgFxu4pyTIGdncGxvdDIgMy4zLjIgICAgIOKckyBwdXJyciAgIDAuMy40XG7inJMgdGliYmxlICAzLjAuMyAgICAg4pyTIGRwbHlyICAgMS4wLjJcbuKckyB0aWR5ciAgIDEuMS4xICAgICDinJMgc3RyaW5nciAxLjQuMFxu4pyTIHJlYWRyICAgMS4zLjEgICAgIOKckyBmb3JjYXRzIDAuNS4wXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG54IGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbnggZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4wIOKUgOKUgFxu4pyTIGdncGxvdDIgMy4zLjIgICAgIOKckyBwdXJyciAgIDAuMy40XG7inJMgdGliYmxlICAzLjAuMyAgICAg4pyTIGRwbHlyICAgMS4wLjJcbuKckyB0aWR5ciAgIDEuMS4xICAgICDinJMgc3RyaW5nciAxLjQuMFxu4pyTIHJlYWRyICAgMS4zLjEgICAgIOKckyBmb3JjYXRzIDAuNS4wXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG54IGRwbHlyOjphcnJhbmdlKCkgICBtYXNrcyBwbHlyOjphcnJhbmdlKClcbnggcHVycnI6OmNvbXBhY3QoKSAgIG1hc2tzIHBseXI6OmNvbXBhY3QoKVxueCBkcGx5cjo6Y291bnQoKSAgICAgbWFza3MgcGx5cjo6Y291bnQoKVxueCBkcGx5cjo6ZmFpbHdpdGgoKSAgbWFza3MgcGx5cjo6ZmFpbHdpdGgoKVxueCBkcGx5cjo6ZmlsdGVyKCkgICAgbWFza3Mgc3RhdHM6OmZpbHRlcigpXG54IGRwbHlyOjppZCgpICAgICAgICBtYXNrcyBwbHlyOjppZCgpXG54IGRwbHlyOjpsYWcoKSAgICAgICBtYXNrcyBzdGF0czo6bGFnKClcbnggZHBseXI6Om11dGF0ZSgpICAgIG1hc2tzIHBseXI6Om11dGF0ZSgpXG54IGRwbHlyOjpyZW5hbWUoKSAgICBtYXNrcyBwbHlyOjpyZW5hbWUoKVxueCBkcGx5cjo6c3VtbWFyaXNlKCkgbWFza3MgcGx5cjo6c3VtbWFyaXNlKClcbnggZHBseXI6OnN1bW1hcml6ZSgpIG1hc2tzIHBseXI6OnN1bW1hcml6ZSgpXG4ifQ== -->
 <pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
   method         from
   print.tbl_lazy     
@@ -1767,8 +1768,17 @@ summary {
 ✓ tidyr   1.1.1     ✓ stringr 1.4.0
 ✓ readr   1.3.1     ✓ forcats 0.5.0
 ── Conflicts ─────────────────────────────────────────── tidyverse_conflicts() ──
-x dplyr::filter() masks stats::filter()
-x dplyr::lag()    masks stats::lag()</code></pre>
+x dplyr::arrange()   masks plyr::arrange()
+x purrr::compact()   masks plyr::compact()
+x dplyr::count()     masks plyr::count()
+x dplyr::failwith()  masks plyr::failwith()
+x dplyr::filter()    masks stats::filter()
+x dplyr::id()        masks plyr::id()
+x dplyr::lag()       masks stats::lag()
+x dplyr::mutate()    masks plyr::mutate()
+x dplyr::rename()    masks plyr::rename()
+x dplyr::summarise() masks plyr::summarise()
+x dplyr::summarize() masks plyr::summarize()</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkeGwpXG5saWJyYXJ5KHRpYmJsZXRpbWUpXG5gYGAifQ== -->
 <pre class="r"><code>library(readxl)
@@ -1798,7 +1808,7 @@ The following objects are masked from ‘package:base’:
 <p>Observational period between March 5 and September 5, 2020</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB2b2x1bWUgZGF0YVxuY21oX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgVm9sdW1lIENhbWJyaWRnZS54bHN4JylcbmdyaF9lZCA8LSByZWFkX2V4Y2VsKCdkYXRhL0VEIHZvbHVtZXMgR1JILnhsc3gnKVxuc21oX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgdm9sdW1lcyBTTUgueGxzeCcpXG5cbiMgbWVudGFsIGhlYWx0aCBkYXRhXG5jbWhfbWggPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdjbWgnKSAlPiVcbiAgcmVwbGFjZShpcy5uYSguKSwgMCkgJT4lIFxuICBwaXZvdF9sb25nZXIoY29scyA9IGBNYXJjaCAxIC0gTWFyY2ggN2A6YEF1Z3VzdCAzMHRoIC0gU2VwdGVtYmVyIDV0aGAsXG4gICAgICAgICAgICAgICBuYW1lc190bz0nd2VlaycsXG4gICAgICAgICAgICAgICB2YWx1ZXNfdG89J2NvdW50JylcblxuZ3JoX21oIDwtIHJlYWRfZXhjZWwoJ2RhdGEvQ09WSUQtMTkgZGF0YSBzaGVldCBlZGl0ZWQgSmFuIDIzLnhsc3gnLCBzaGVldD0nZ3JoJykgJT4lXG4gIHJlcGxhY2UoaXMubmEoLiksIDApICU+JSBcbiAgcGl2b3RfbG9uZ2VyKGNvbHMgPSBgTWFyY2ggMSAtIE1hcmNoIDdgOmBBdWd1c3QgMzB0aCAtIFNlcHRlbWJlciA1dGhgLFxuICAgICAgICAgICAgICAgbmFtZXNfdG89J3dlZWsnLFxuICAgICAgICAgICAgICAgdmFsdWVzX3RvPSdjb3VudCcpXG5cbnNtaF9taCA8LSByZWFkX2V4Y2VsKCdkYXRhL0NPVklELTE5IGRhdGEgc2hlZXQgZWRpdGVkIEphbiAyMy54bHN4Jywgc2hlZXQ9J3NtaCcpICU+JVxuICByZXBsYWNlKGlzLm5hKC4pLCAwKSAlPiUgXG4gIHBpdm90X2xvbmdlcihjb2xzID0gYE1hcmNoIDEgLSBNYXJjaCA3YDpgQXVndXN0IDMwdGggLSBTZXB0ZW1iZXIgNXRoYCxcbiAgICAgICAgICAgICAgIG5hbWVzX3RvPSd3ZWVrJyxcbiAgICAgICAgICAgICAgIHZhbHVlc190bz0nY291bnQnKVxuXG4jIFBvbGljZSBkYXRhXG5wb2xpY2UgPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdwb2wnKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB2b2x1bWUgZGF0YVxuY21oX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgVm9sdW1lIENhbWJyaWRnZS54bHN4JylcbmdyaF9lZCA8LSByZWFkX2V4Y2VsKCdkYXRhL0VEIHZvbHVtZXMgR1JILnhsc3gnKVxuc21oX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgdm9sdW1lcyBTTUgueGxzeCcpXG5cbiMgbWVudGFsIGhlYWx0aCBkYXRhXG5jbWhfbWggPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdjbWgnKSAlPiVcbiAgcmVwbGFjZShpcy5uYSguKSwgMCkgJT4lIFxuICBwaXZvdF9sb25nZXIoY29scyA9IGBNYXJjaCAxIC0gTWFyY2ggN2A6YEF1Z3VzdCAzMHRoIC0gU2VwdGVtYmVyIDV0aGAsXG4gICAgICAgICAgICAgICBuYW1lc190bz0nd2VlaycsXG4gICAgICAgICAgICAgICB2YWx1ZXNfdG89J2NvdW50JylcblxuZ3JoX21oIDwtIHJlYWRfZXhjZWwoJ2RhdGEvQ09WSUQtMTkgZGF0YSBzaGVldCBlZGl0ZWQgSmFuIDIzLnhsc3gnLCBzaGVldD0nZ3JoJykgJT4lXG4gIHJlcGxhY2UoaXMubmEoLiksIDApICU+JSBcbiAgcGl2b3RfbG9uZ2VyKGNvbHMgPSBgTWFyY2ggMSAtIE1hcmNoIDdgOmBBdWd1c3QgMzB0aCAtIFNlcHRlbWJlciA1dGhgLFxuICAgICAgICAgICAgICAgbmFtZXNfdG89J3dlZWsnLFxuICAgICAgICAgICAgICAgdmFsdWVzX3RvPSdjb3VudCcpXG5cbnNtaF9taCA8LSByZWFkX2V4Y2VsKCdkYXRhL0NPVklELTE5IGRhdGEgc2hlZXQgZWRpdGVkIEphbiAyMy54bHN4Jywgc2hlZXQ9J3NtaCcpICU+JVxuICByZXBsYWNlKGlzLm5hKC4pLCAwKSAlPiUgXG4gIHBpdm90X2xvbmdlcihjb2xzID0gYE1hcmNoIDEgLSBNYXJjaCA3YDpgQXVndXN0IDMwdGggLSBTZXB0ZW1iZXIgNXRoYCxcbiAgICAgICAgICAgICAgIG5hbWVzX3RvPSd3ZWVrJyxcbiAgICAgICAgICAgICAgIHZhbHVlc190bz0nY291bnQnKVxuXG4jIFBvbGljZSBkYXRhXG5wb2wgPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdwb2wnKSAlPiVcbiAgZmlsdGVyKFN1YnR5cGUhPSdEcnVnIG92ZXJkb3NlIChtb250aGx5IHRvdGFscyknICYgVHlwZSE9J0VNUyBkYXRhJykgJT4lIFxuICBtdXRhdGUoYEp1bmUgMjEgLSBKdW5lIDI3YD1hcy5kb3VibGUoYEp1bmUgMjEgLSBKdW5lIDI3YCkpICU+JSBcbiAgcmVwbGFjZShpcy5uYSguKSwgMCkgJT4lXG4gIHBpdm90X2xvbmdlcihjb2xzID0gYE1hcmNoIDEgLSBNYXJjaCA3YDpgQXVndXN0IDMwdGggLSBTZXB0ZW1iZXIgNXRoYCxcbiAgICAgICAgICAgICAgIG5hbWVzX3RvPSd3ZWVrJyxcbiAgICAgICAgICAgICAgIHZhbHVlc190bz0nY291bnQnKSBcbmBgYCJ9 -->
 <pre class="r"><code># volume data
 cmh_ed &lt;- read_excel(&#39;data/ED Volume Cambridge.xlsx&#39;)
 grh_ed &lt;- read_excel(&#39;data/ED volumes GRH.xlsx&#39;)
@@ -1824,10 +1834,19 @@ smh_mh &lt;- read_excel(&#39;data/COVID-19 data sheet edited Jan 23.xlsx&#39;, s
                values_to=&#39;count&#39;)
 
 # Police data
-police &lt;- read_excel(&#39;data/COVID-19 data sheet edited Jan 23.xlsx&#39;, sheet=&#39;pol&#39;)</code></pre>
+pol &lt;- read_excel(&#39;data/COVID-19 data sheet edited Jan 23.xlsx&#39;, sheet=&#39;pol&#39;) %&gt;%
+  filter(Subtype!=&#39;Drug overdose (monthly totals)&#39; &amp; Type!=&#39;EMS data&#39;) %&gt;% 
+  mutate(`June 21 - June 27`=as.double(`June 21 - June 27`)) %&gt;% 
+  replace(is.na(.), 0) %&gt;%
+  pivot_longer(cols = `March 1 - March 7`:`August 30th - September 5th`,
+               names_to=&#39;week&#39;,
+               values_to=&#39;count&#39;) </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="figure-1" class="section level2">
+<h2>Figure 1</h2>
 <p>Get total volume</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -1889,19 +1908,22 @@ p</code></pre>
 <p>So, to have a more correct standard error we can use a quasi-poisson model:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSB2b2wgJT4lIG11dGF0ZShkYXRlPWFzLkRhdGUoZGF0ZSkpICU+JSBcbiAgZmlsdGVyKGRhdGU+PScyMDE5LTAzLTE3JyAmIGRhdGU8PScyMDIwLTA1LTA0JykgJT4lIFxuICBmaWx0ZXIoZGF0ZTw9JzIwMTktMDUtMDQnIHwgZGF0ZT49JzIwMjAtMDMtMTcnKVxuXG4jIFBvaXNzb24gcmVncmVzc2lvblxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4geWVhciwgZmFtaWx5PSdxdWFzaXBvaXNzb24nLCBkYXRhPWRhdGEpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>data &lt;- vol %&gt;% mutate(date=as.Date(date)) %&gt;% 
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudm9sdW1lIDwtIHZvbCAlPiUgbXV0YXRlKGRhdGU9YXMuRGF0ZShkYXRlKSkgJT4lIFxuICBmaWx0ZXIoZGF0ZT49JzIwMTktMDMtMTcnICYgZGF0ZTw9JzIwMjAtMDUtMDQnKSAlPiUgXG4gIGZpbHRlcihkYXRlPD0nMjAxOS0wNS0wNCcgfCBkYXRlPj0nMjAyMC0wMy0xNycpXG5cbiMgUG9pc3NvbiByZWdyZXNzaW9uXG5wb2lzc29uX3ZvbCA8LSBnbG0odG90YWwgfiB5ZWFyLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicsIGRhdGE9dm9sdW1lKVxuZmlnMSA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX3ZvbCkpKSAlPiUgXG4gIHNsaWNlKDIpXG53cml0ZV9jc3YoZmlnMSwgJ3N0YXRfdGVzdHMvZmlnMS5jc3YnKVxuc3VtbWFyeShwb2lzc29uX3ZvbClcbmBgYCJ9 -->
+<pre class="r"><code>volume &lt;- vol %&gt;% mutate(date=as.Date(date)) %&gt;% 
   filter(date&gt;=&#39;2019-03-17&#39; &amp; date&lt;=&#39;2020-05-04&#39;) %&gt;% 
   filter(date&lt;=&#39;2019-05-04&#39; | date&gt;=&#39;2020-03-17&#39;)
 
 # Poisson regression
-poisson_out &lt;- glm(total ~ year, family=&#39;quasipoisson&#39;, data=data)
-summary(poisson_out)</code></pre>
+poisson_vol &lt;- glm(total ~ year, family=&#39;quasipoisson&#39;, data=volume)
+fig1 &lt;- data.frame(coef(summary(poisson_vol))) %&gt;% 
+  slice(2)
+write_csv(fig1, &#39;stat_tests/fig1.csv&#39;)
+summary(poisson_vol)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IHllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMy41NjMxICAtMS4xNzczICAtMC4yMjAzICAgMC44NzkxICAgNS44MDkyICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDYuMTk4MjMgICAgMC4wMTE0OSAgNTM5LjYzICAgPDJlLTE2ICoqKlxueWVhcjIwMjAgICAgLTAuNTgwODcgICAgMC4wMTkxOCAgLTMwLjI5ICAgPDJlLTE2ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAzLjE3OTgxMylcblxuICAgIE51bGwgZGV2aWFuY2U6IDMzNDAuMTAgIG9uIDk3ICBkZWdyZWVzIG9mIGZyZWVkb21cblJlc2lkdWFsIGRldmlhbmNlOiAgMjk4LjYzICBvbiA5NiAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IE5BXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA0XG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IHllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSB2b2x1bWUpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgTWluICAgICAgIDFRICAgTWVkaWFuICAgICAgIDNRICAgICAgTWF4ICBcbi0zLjU2MzEgIC0xLjE3NzMgIC0wLjIyMDMgICAwLjg3OTEgICA1LjgwOTIgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICAgXG4oSW50ZXJjZXB0KSAgNi4xOTgyMyAgICAwLjAxMTQ5ICA1MzkuNjMgICA8MmUtMTYgKioqXG55ZWFyMjAyMCAgICAtMC41ODA4NyAgICAwLjAxOTE4ICAtMzAuMjkgICA8MmUtMTYgKioqXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBxdWFzaXBvaXNzb24gZmFtaWx5IHRha2VuIHRvIGJlIDMuMTc5ODEzKVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMzM0MC4xMCAgb24gOTcgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6ICAyOTguNjMgIG9uIDk2ICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogTkFcblxuTnVtYmVyIG9mIEZpc2hlciBTY29yaW5nIGl0ZXJhdGlvbnM6IDRcbiJ9 -->
 <pre><code>
 Call:
-glm(formula = total ~ year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ year, family = &quot;quasipoisson&quot;, data = volume)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
@@ -1924,38 +1946,49 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="figure-2" class="section level2">
+<h2>Figure 2</h2>
+<p>Lockdown: 3/17 - 5/4 Weeks:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X2RhdGEgPC0gZnVuY3Rpb24oZGF0YSwgdHlwZSwgc3VidHlwZT1OVUxMKSB7XG4gIGlmIChpcy5udWxsKHN1YnR5cGUpKSB7XG4gICAgc21oIDwtIGRhdGEkc21oX21oICU+JVxuICAgICAgZmlsdGVyKFR5cGU9PXR5cGUpICU+JSBcbiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSBcbiAgICAgIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKSAlPiUgXG4gICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSlcbiAgICBncmggPC0gZGF0YSRncmhfbWggJT4lXG4gICAgICBmaWx0ZXIoVHlwZT09dHlwZSkgJT4lIFxuICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIFxuICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSBcbiAgICAgIG11dGF0ZShkYXRlPXBhc3RlKHdlZWssIFllYXIsIHNlcD0nICcpKVxuICAgIGNtaCA8LSBkYXRhJGNtaF9taCAlPiVcbiAgICAgIGZpbHRlcihUeXBlPT10eXBlKSAlPiUgXG4gICAgICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgXG4gICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIFxuICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpXG4gIH0gZWxzZSB7XG4gICAgc21oIDwtIGRhdGEkc21oX21oICU+JVxuICAgICAgZmlsdGVyKFR5cGU9PXR5cGUsIFN1YnR5cGU9PXN1YnR5cGUpICU+JSBcbiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSBcbiAgICAgIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKSAlPiUgXG4gICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSlcbiAgICBncmggPC0gZGF0YSRncmhfbWggJT4lXG4gICAgICBmaWx0ZXIoVHlwZT09dHlwZSwgU3VidHlwZT09c3VidHlwZSkgJT4lIFxuICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIFxuICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSBcbiAgICAgIG11dGF0ZShkYXRlPXBhc3RlKHdlZWssIFllYXIsIHNlcD0nICcpKVxuICAgIGNtaCA8LSBkYXRhJGNtaF9taCAlPiVcbiAgICAgIGZpbHRlcihUeXBlPT10eXBlLCBTdWJ0eXBlPT1zdWJ0eXBlKSAlPiUgXG4gICAgICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgXG4gICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIFxuICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpXG4gIH1cbiAgd2hvbGUgPC0gc21oICU+JSBcbiAgICBsZWZ0X2pvaW4oZ3JoLCBieT0nZGF0ZScpICU+JVxuICAgIGxlZnRfam9pbihjbWgsIGJ5PSdkYXRlJykgJT4lIFxuICAgIG11dGF0ZSh0b3RhbD1jb3VudCtjb3VudC54K2NvdW50LnkpICU+JSBcbiAgICBzZWxlY3QoWWVhciwgd2VlaywgdG90YWwpICU+JSBcbiAgICBtdXRhdGUoWWVhcj1hcy5mYWN0b3IoWWVhcikpXG4gIHJldHVybih3aG9sZSlcbn1cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X2RhdGEgPC0gZnVuY3Rpb24oZGF0YSwgdHlwZSwgc3VidHlwZT1OVUxMKSB7XG4gIHdlZWtzIDwtIGMoJ01hcmNoIDE1IC0gTWFyY2ggMjEnLCAnTWFyIDIyIC0gTWFyIDI4JywgJ01hciAyOSAtIEFwciA0JywgJ0FwcmlsIDUgLSAxMScsICdBcHJpbCAxMiAtIDE4JywgJ0FwcmlsIDE5IC0gMjUnLCAnQXByaWwgMjYgLSBNYXkgMicpXG4gIGlmIChpcy5udWxsKHN1YnR5cGUpKSB7XG4gICAgc21oIDwtIGRhdGEkc21oX21oICU+JVxuICAgICAgZmlsdGVyKHdlZWsgJWluJSB3ZWVrcykgJT4lIFxuICAgICAgZmlsdGVyKFR5cGU9PXR5cGUpICU+JSBcbiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSBcbiAgICAgIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKSAlPiUgXG4gICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSlcbiAgICBncmggPC0gZGF0YSRncmhfbWggJT4lXG4gICAgICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgXG4gICAgICBmaWx0ZXIoVHlwZT09dHlwZSkgJT4lIFxuICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIFxuICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSBcbiAgICAgIG11dGF0ZShkYXRlPXBhc3RlKHdlZWssIFllYXIsIHNlcD0nICcpKVxuICAgIGNtaCA8LSBkYXRhJGNtaF9taCAlPiVcbiAgICAgIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSBcbiAgICAgIGZpbHRlcihUeXBlPT10eXBlKSAlPiUgXG4gICAgICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgXG4gICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIFxuICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpXG4gIH0gZWxzZSB7XG4gICAgc21oIDwtIGRhdGEkc21oX21oICU+JVxuICAgICAgZmlsdGVyKHdlZWsgJWluJSB3ZWVrcykgJT4lIFxuICAgICAgZmlsdGVyKFR5cGU9PXR5cGUsIFN1YnR5cGU9PXN1YnR5cGUpICU+JSBcbiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSBcbiAgICAgIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKSAlPiUgXG4gICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSlcbiAgICBncmggPC0gZGF0YSRncmhfbWggJT4lXG4gICAgICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgXG4gICAgICBmaWx0ZXIoVHlwZT09dHlwZSwgU3VidHlwZT09c3VidHlwZSkgJT4lIFxuICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIFxuICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSBcbiAgICAgIG11dGF0ZShkYXRlPXBhc3RlKHdlZWssIFllYXIsIHNlcD0nICcpKVxuICAgIGNtaCA8LSBkYXRhJGNtaF9taCAlPiVcbiAgICAgIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSBcbiAgICAgIGZpbHRlcihUeXBlPT10eXBlLCBTdWJ0eXBlPT1zdWJ0eXBlKSAlPiUgXG4gICAgICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgXG4gICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIFxuICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpXG4gIH1cbiAgd2hvbGUgPC0gc21oICU+JSBcbiAgICBsZWZ0X2pvaW4oZ3JoLCBieT0nZGF0ZScpICU+JVxuICAgIGxlZnRfam9pbihjbWgsIGJ5PSdkYXRlJykgJT4lIFxuICAgIG11dGF0ZSh0b3RhbD1jb3VudCtjb3VudC54K2NvdW50LnkpICU+JSBcbiAgICBzZWxlY3QoWWVhciwgd2VlaywgdG90YWwpICU+JSBcbiAgICBtdXRhdGUoWWVhcj1hcy5mYWN0b3IoWWVhcikpXG4gIHJldHVybih3aG9sZSlcbn1cbmBgYCJ9 -->
 <pre class="r"><code>get_data &lt;- function(data, type, subtype=NULL) {
+  weeks &lt;- c(&#39;March 15 - March 21&#39;, &#39;Mar 22 - Mar 28&#39;, &#39;Mar 29 - Apr 4&#39;, &#39;April 5 - 11&#39;, &#39;April 12 - 18&#39;, &#39;April 19 - 25&#39;, &#39;April 26 - May 2&#39;)
   if (is.null(subtype)) {
     smh &lt;- data$smh_mh %&gt;%
+      filter(week %in% weeks) %&gt;% 
       filter(Type==type) %&gt;% 
       group_by(Year, week) %&gt;% 
       summarize(count=sum(count)) %&gt;% 
       mutate(date=paste(week, Year, sep=&#39; &#39;))
     grh &lt;- data$grh_mh %&gt;%
+      filter(week %in% weeks) %&gt;% 
       filter(Type==type) %&gt;% 
       group_by(Year, week) %&gt;% 
       summarize(count=sum(count)) %&gt;% 
       mutate(date=paste(week, Year, sep=&#39; &#39;))
     cmh &lt;- data$cmh_mh %&gt;%
+      filter(week %in% weeks) %&gt;% 
       filter(Type==type) %&gt;% 
       group_by(Year, week) %&gt;% 
       summarize(count=sum(count)) %&gt;% 
       mutate(date=paste(week, Year, sep=&#39; &#39;))
   } else {
     smh &lt;- data$smh_mh %&gt;%
+      filter(week %in% weeks) %&gt;% 
       filter(Type==type, Subtype==subtype) %&gt;% 
       group_by(Year, week) %&gt;% 
       summarize(count=sum(count)) %&gt;% 
       mutate(date=paste(week, Year, sep=&#39; &#39;))
     grh &lt;- data$grh_mh %&gt;%
+      filter(week %in% weeks) %&gt;% 
       filter(Type==type, Subtype==subtype) %&gt;% 
       group_by(Year, week) %&gt;% 
       summarize(count=sum(count)) %&gt;% 
       mutate(date=paste(week, Year, sep=&#39; &#39;))
     cmh &lt;- data$cmh_mh %&gt;%
+      filter(week %in% weeks) %&gt;% 
       filter(Type==type, Subtype==subtype) %&gt;% 
       group_by(Year, week) %&gt;% 
       summarize(count=sum(count)) %&gt;% 
@@ -1983,79 +2016,81 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>Involuntary - Form 1</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ0Zvcm0gMSBUb3RhbCcpXG5gYGAifQ== -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Form 1 Total&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW52b2x1bnRhcnkgPC0gZ2V0X2RhdGEobWgsICdGb3JtIDEgVG90YWwnKVxuYGBgIn0= -->
+<pre class="r"><code>involuntary &lt;- get_data(mh, &#39;Form 1 Total&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25faW52IDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9aW52b2x1bnRhcnksIGZhbWlseT0ncG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25faW52KVxuYGBgIn0= -->
+<pre class="r"><code># Poisson regression
+poisson_inv &lt;- glm(total ~ Year, data=involuntary, family=&#39;poisson&#39;)
+summary(poisson_inv)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tNC44MjQxICAtMS40NDE5ICAtMC4wMjk4ICAgMS4wNzYzICAgMy45OTA0ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDUuMDI1MTAgICAgMC4wMzA4NSAxNjIuODc0ICA8IDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgLTAuMjA4MTEgICAgMC4wNDYwOSAgLTQuNTE2IDMuNjVlLTA1ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAzLjkxMTMxKVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMjg1LjkzICBvbiA1MyAgZGVncmVlcyBvZiBmcmVlZG9tXG5SZXNpZHVhbCBkZXZpYW5jZTogMjA1Ljc0ICBvbiA1MiAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IE5BXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA0XG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicG9pc3NvblwiLCBkYXRhID0gaW52b2x1bnRhcnkpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgTWluICAgICAgIDFRICAgTWVkaWFuICAgICAgIDNRICAgICAgTWF4ICBcbi0xLjE4NDMgIC0wLjY0NzQgIC0wLjM2NDMgICAwLjgwODMgICAxLjI2NTQgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHogdmFsdWUgUHIoPnx6fCkgICAgXG4oSW50ZXJjZXB0KSAgNS4wMTk0OCAgICAwLjAzMzE5IDE1MS4yNTMgICA8MmUtMTYgKioqXG5ZZWFyMjAyMCAgICAtMC40ODE1MiAgICAwLjA1MzcwICAtOC45NjcgICA8MmUtMTYgKioqXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxKVxuXG4gICAgTnVsbCBkZXZpYW5jZTogOTAuOTI0NiAgb24gMTEgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6ICA4LjE3ODIgIG9uIDEwICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogOTEuNTYxXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiAzXG4ifQ== -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;poisson&quot;, data = involuntary)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--4.8241  -1.4419  -0.0298   1.0763   3.9904  
+-1.1843  -0.6474  -0.3643   0.8083   1.2654  
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  5.02510    0.03085 162.874  &lt; 2e-16 ***
-Year2020    -0.20811    0.04609  -4.516 3.65e-05 ***
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  5.01948    0.03319 151.253   &lt;2e-16 ***
+Year2020    -0.48152    0.05370  -8.967   &lt;2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 3.91131)
+(Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 285.93  on 53  degrees of freedom
-Residual deviance: 205.74  on 52  degrees of freedom
-AIC: NA
+    Null deviance: 90.9246  on 11  degrees of freedom
+Residual deviance:  8.1782  on 10  degrees of freedom
+AIC: 91.561
 
-Number of Fisher Scoring iterations: 4</code></pre>
+Number of Fisher Scoring iterations: 3</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Substance related</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1N1YnN0YW5jZSByZWxhdGVkJylcbmBgYCJ9 -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Substance related&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3Vic3RhbmNlIDwtIGdldF9kYXRhKG1oLCAnU3Vic3RhbmNlIHJlbGF0ZWQnKVxuYGBgIn0= -->
+<pre class="r"><code>substance &lt;- get_data(mh, &#39;Substance related&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fc3ViIDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9c3Vic3RhbmNlLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fc3ViKVxuYGBgIn0= -->
+<pre class="r"><code># Poisson regression
+poisson_sub &lt;- glm(total ~ Year, data=substance, family=&#39;quasipoisson&#39;)
+summary(poisson_sub)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMy43OTExICAtMS43MjA2ICAtMC4wMjk0ICAgMS4yMjM2ICAxMS4yODE2ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDQuNzE3ODQgICAgMC4wNDgwMyAgOTguMjE5ICA8IDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgLTAuMzQ1MTEgICAgMC4wNzQ2MCAgLTQuNjI2IDIuNTFlLTA1ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSA2Ljk3MjU4NClcblxuICAgIE51bGwgZGV2aWFuY2U6IDQ3Ni44NyAgb24gNTMgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDMyNS40MyAgb24gNTIgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBzdWJzdGFuY2UpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgIE1pbiAgICAgICAgMVEgICAgTWVkaWFuICAgICAgICAzUSAgICAgICBNYXggIFxuLTIuNjg1NjggIC0xLjU0MzIzICAtMC4wNjgyMiAgIDEuNTEwMTcgICAyLjY3ODk4ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgICA0LjY1NzEgICAgIDAuMDc2MiAgNjEuMTIwIDMuMzRlLTE0ICoqKlxuWWVhcjIwMjAgICAgIC0wLjU3MTIgICAgIDAuMTI2OCAgLTQuNTA0ICAwLjAwMTE0ICoqIFxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAzLjY2OTM2NSlcblxuICAgIE51bGwgZGV2aWFuY2U6IDExNC41OTkgIG9uIDExICBkZWdyZWVzIG9mIGZyZWVkb21cblJlc2lkdWFsIGRldmlhbmNlOiAgMzcuMTE2ICBvbiAxMCAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IE5BXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA0XG4ifQ== -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = substance)
 
 Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--3.7911  -1.7206  -0.0294   1.2236  11.2816  
+     Min        1Q    Median        3Q       Max  
+-2.68568  -1.54323  -0.06822   1.51017   2.67898  
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  4.71784    0.04803  98.219  &lt; 2e-16 ***
-Year2020    -0.34511    0.07460  -4.626 2.51e-05 ***
+(Intercept)   4.6571     0.0762  61.120 3.34e-14 ***
+Year2020     -0.5712     0.1268  -4.504  0.00114 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 6.972584)
+(Dispersion parameter for quasipoisson family taken to be 3.669365)
 
-    Null deviance: 476.87  on 53  degrees of freedom
-Residual deviance: 325.43  on 52  degrees of freedom
+    Null deviance: 114.599  on 11  degrees of freedom
+Residual deviance:  37.116  on 10  degrees of freedom
 AIC: NA
 
 Number of Fisher Scoring iterations: 4</code></pre>
@@ -2065,38 +2100,39 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>Alcohol Related</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1N1YnN0YW5jZSByZWxhdGVkJywgJ0FsY29ob2wgKHNlcGFyYXRlKScpXG5gYGAifQ== -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Substance related&#39;, &#39;Alcohol (separate)&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxjb2hvbCA8LSBnZXRfZGF0YShtaCwgJ1N1YnN0YW5jZSByZWxhdGVkJywgJ0FsY29ob2wgKHNlcGFyYXRlKScpXG5gYGAifQ== -->
+<pre class="r"><code>alcohol &lt;- get_data(mh, &#39;Substance related&#39;, &#39;Alcohol (separate)&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fYWxjIDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9YWxjb2hvbCwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKVxuc3VtbWFyeShwb2lzc29uX2FsYylcbmBgYCJ9 -->
+<pre class="r"><code># Poisson regression
+poisson_alc &lt;- glm(total ~ Year, data=alcohol, family=&#39;quasipoisson&#39;)
+summary(poisson_alc)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMi45NTk0ICAtMC45NTU2ICAtMC4zODUyICAgMC41NDE1ICAgOC4xNTA2ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDMuNTE1NDEgICAgMC4wNjA1MSAgNTguMDk4ICA8IDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgLTAuMzg4MDAgICAgMC4wOTUxNyAgLTQuMDc3IDAuMDAwMTU3ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAzLjMyNDQxNilcblxuICAgIE51bGwgZGV2aWFuY2U6IDIwMC4zMiAgb24gNTMgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDE0NC4wMyAgb24gNTIgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBhbGNvaG9sKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMS43NTM5ICAtMS4xNDcyICAtMC4yMDczICAgMC45ODc5ICAgMS43NDkwICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgICAzLjI3NzEgICAgIDAuMTA2NiAgMzAuNzU1ICAzLjFlLTExICoqKlxuWWVhcjIwMjAgICAgIC0wLjQyNDUgICAgIDAuMTY5NSAgLTIuNTA1ICAgMC4wMzEyICogIFxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxLjgwNTM3KVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMjkuNjIyICBvbiAxMSAgZGVncmVlcyBvZiBmcmVlZG9tXG5SZXNpZHVhbCBkZXZpYW5jZTogMTguMDM0ICBvbiAxMCAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IE5BXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA0XG4ifQ== -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = alcohol)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--2.9594  -0.9556  -0.3852   0.5415   8.1506  
+-1.7539  -1.1472  -0.2073   0.9879   1.7490  
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  3.51541    0.06051  58.098  &lt; 2e-16 ***
-Year2020    -0.38800    0.09517  -4.077 0.000157 ***
+(Intercept)   3.2771     0.1066  30.755  3.1e-11 ***
+Year2020     -0.4245     0.1695  -2.505   0.0312 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 3.324416)
+(Dispersion parameter for quasipoisson family taken to be 1.80537)
 
-    Null deviance: 200.32  on 53  degrees of freedom
-Residual deviance: 144.03  on 52  degrees of freedom
+    Null deviance: 29.622  on 11  degrees of freedom
+Residual deviance: 18.034  on 10  degrees of freedom
 AIC: NA
 
 Number of Fisher Scoring iterations: 4</code></pre>
@@ -2106,38 +2142,39 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>Mood related</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ01vb2QgcmVsYXRlZCcpXG5gYGAifQ== -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Mood related&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9vZCA8LSBnZXRfZGF0YShtaCwgJ01vb2QgcmVsYXRlZCcpXG5gYGAifQ== -->
+<pre class="r"><code>mood &lt;- get_data(mh, &#39;Mood related&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fbW9vZCA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPW1vb2QsIGZhbWlseT0ncXVhc2lwb2lzc29uJylcbnN1bW1hcnkocG9pc3Nvbl9tb29kKVxuYGBgIn0= -->
+<pre class="r"><code># Poisson regression
+poisson_mood &lt;- glm(total ~ Year, data=mood, family=&#39;quasipoisson&#39;)
+summary(poisson_mood)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMy40NDI0ICAtMS4xNTI2ICAgMC4xODczICAgMS4yNjYzICAgMi41ODM1ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDQuMTc1NTMgICAgMC4wMzc5MiAxMTAuMTE1ICA8IDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgLTAuMjgyOTUgICAgMC4wNTc4NSAgLTQuODkyIDEuMDFlLTA1ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAyLjUyNjM5NylcblxuICAgIE51bGwgZGV2aWFuY2U6IDE5Ni45MCAgb24gNTMgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDEzNS44NCAgb24gNTIgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBtb29kKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMS40NjMzICAtMC43NjA1ICAtMC41Njk0ICAgMC44MjA0ICAgMi4wMTk2ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDQuMzAxODEgICAgMC4wNTU2MiAgNzcuMzQ4IDMuMTllLTE1ICoqKlxuWWVhcjIwMjAgICAgLTAuNzM2OTggICAgMC4wOTc3NiAgLTcuNTM5IDEuOTdlLTA1ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxLjM3MDI5MylcblxuICAgIE51bGwgZGV2aWFuY2U6IDk2LjYwNSAgb24gMTEgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDEzLjM1OSAgb24gMTAgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = mood)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--3.4424  -1.1526   0.1873   1.2663   2.5835  
+-1.4633  -0.7605  -0.5694   0.8204   2.0196  
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  4.17553    0.03792 110.115  &lt; 2e-16 ***
-Year2020    -0.28295    0.05785  -4.892 1.01e-05 ***
+(Intercept)  4.30181    0.05562  77.348 3.19e-15 ***
+Year2020    -0.73698    0.09776  -7.539 1.97e-05 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 2.526397)
+(Dispersion parameter for quasipoisson family taken to be 1.370293)
 
-    Null deviance: 196.90  on 53  degrees of freedom
-Residual deviance: 135.84  on 52  degrees of freedom
+    Null deviance: 96.605  on 11  degrees of freedom
+Residual deviance: 13.359  on 10  degrees of freedom
 AIC: NA
 
 Number of Fisher Scoring iterations: 4</code></pre>
@@ -2147,38 +2184,39 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>Psychosis related</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1BzeWNob3NpcyByZWxhdGVkJylcbmBgYCJ9 -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Psychosis related&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHN5Y2hvc2lzIDwtIGdldF9kYXRhKG1oLCAnUHN5Y2hvc2lzIHJlbGF0ZWQnKVxuYGBgIn0= -->
+<pre class="r"><code>psychosis &lt;- get_data(mh, &#39;Psychosis related&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fcHN5IDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9cHN5Y2hvc2lzLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fcHN5KVxuYGBgIn0= -->
+<pre class="r"><code># Poisson regression
+poisson_psy &lt;- glm(total ~ Year, data=psychosis, family=&#39;quasipoisson&#39;)
+summary(poisson_psy)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMi40MzU5ICAtMC45ODUwICAtMC4xMDM2ICAgMC43MDU2ICAgMy4wNDE1ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDMuMjk0NDYgICAgMC4wNDYyMyAgNzEuMjU5ICAgPDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgIDAuMDc2NjYgICAgMC4wNjQxNiAgIDEuMTk1ICAgIDAuMjM4ICAgIFxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxLjU1NjAyOClcblxuICAgIE51bGwgZGV2aWFuY2U6IDgyLjMzMiAgb24gNTMgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDgwLjExMCAgb24gNTIgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBwc3ljaG9zaXMpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgTWluICAgICAgIDFRICAgTWVkaWFuICAgICAgIDNRICAgICAgTWF4ICBcbi0xLjg1NDUgIC0wLjY4OTkgICAwLjE1ODUgICAwLjY4MzQgICAxLjM1MTQgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICAgXG4oSW50ZXJjZXB0KSAgMy4xNTcwMCAgICAwLjA4Nzg3ICAgMzUuOTMgNi42M2UtMTIgKioqXG5ZZWFyMjAyMCAgICAgMC4wOTQ2NyAgICAwLjEyMTQyICAgIDAuNzggICAgMC40NTQgICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBxdWFzaXBvaXNzb24gZmFtaWx5IHRha2VuIHRvIGJlIDEuMDg4NTkzKVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMTEuODc5ICBvbiAxMSAgZGVncmVlcyBvZiBmcmVlZG9tXG5SZXNpZHVhbCBkZXZpYW5jZTogMTEuMjE2ICBvbiAxMCAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IE5BXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA0XG4ifQ== -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = psychosis)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--2.4359  -0.9850  -0.1036   0.7056   3.0415  
+-1.8545  -0.6899   0.1585   0.6834   1.3514  
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  3.29446    0.04623  71.259   &lt;2e-16 ***
-Year2020     0.07666    0.06416   1.195    0.238    
+(Intercept)  3.15700    0.08787   35.93 6.63e-12 ***
+Year2020     0.09467    0.12142    0.78    0.454    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 1.556028)
+(Dispersion parameter for quasipoisson family taken to be 1.088593)
 
-    Null deviance: 82.332  on 53  degrees of freedom
-Residual deviance: 80.110  on 52  degrees of freedom
+    Null deviance: 11.879  on 11  degrees of freedom
+Residual deviance: 11.216  on 10  degrees of freedom
 AIC: NA
 
 Number of Fisher Scoring iterations: 4</code></pre>
@@ -2188,39 +2226,40 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>Situational crisis</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1NpdHVhdGlvbmFsIGNyaXNpcycpXG5gYGAifQ== -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Situational crisis&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2l0dWF0aW9uYWwgPC0gZ2V0X2RhdGEobWgsICdTaXR1YXRpb25hbCBjcmlzaXMnKVxuYGBgIn0= -->
+<pre class="r"><code>situational &lt;- get_data(mh, &#39;Situational crisis&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fc2l0IDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9c2l0dWF0aW9uYWwsIGZhbWlseT0ncG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fc2l0KVxuYGBgIn0= -->
+<pre class="r"><code># Poisson regression
+poisson_sit &lt;- glm(total ~ Year, data=situational, family=&#39;poisson&#39;)
+summary(poisson_sit)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgICBNaW4gICAgICAgIDFRICAgIE1lZGlhbiAgICAgICAgM1EgICAgICAgTWF4ICBcbi0xLjk0ODMwICAtMC44NjU0NyAgLTAuMDg4MzQgICAwLjc1NjE1ICAgMS43NzEwNSAgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KSAgICBcbihJbnRlcmNlcHQpICAzLjA2Mzc0ICAgIDAuMDM5MTggICA3OC4xOSAgPCAyZS0xNiAqKipcblllYXIyMDIwICAgIC0wLjY5MzE1ICAgIDAuMDY3ODYgIC0xMC4yMSA0Ljk4ZS0xNCAqKipcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG4oRGlzcGVyc2lvbiBwYXJhbWV0ZXIgZm9yIHF1YXNpcG9pc3NvbiBmYW1pbHkgdGFrZW4gdG8gYmUgMC44ODczNDM5KVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMTQ0LjI0NCAgb24gNTMgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6ICA0Ni4wNDMgIG9uIDUyICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogTkFcblxuTnVtYmVyIG9mIEZpc2hlciBTY29yaW5nIGl0ZXJhdGlvbnM6IDRcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicG9pc3NvblwiLCBkYXRhID0gc2l0dWF0aW9uYWwpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgIE1pbiAgICAgICAgMVEgICAgTWVkaWFuICAgICAgICAzUSAgICAgICBNYXggIFxuLTEuNDA1NjAgIC0wLjgyNjQwICAgMC4wNDk2OCAgIDAuNTg3MzQgICAxLjIzODE0ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB6IHZhbHVlIFByKD58enwpICAgIFxuKEludGVyY2VwdCkgIDMuMTI4MjIgICAgMC4wODU0NCAgMzYuNjE1ICA8IDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgLTAuOTQ5NjkgICAgMC4xNjE3NiAgLTUuODcxIDQuMzRlLTA5ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcG9pc3NvbiBmYW1pbHkgdGFrZW4gdG8gYmUgMSlcblxuICAgIE51bGwgZGV2aWFuY2U6IDQ3LjczMDEgIG9uIDExICBkZWdyZWVzIG9mIGZyZWVkb21cblJlc2lkdWFsIGRldmlhbmNlOiAgOS4yNzc2ICBvbiAxMCAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IDY2Ljk5OVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;poisson&quot;, data = situational)
 
 Deviance Residuals: 
      Min        1Q    Median        3Q       Max  
--1.94830  -0.86547  -0.08834   0.75615   1.77105  
+-1.40560  -0.82640   0.04968   0.58734   1.23814  
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  3.06374    0.03918   78.19  &lt; 2e-16 ***
-Year2020    -0.69315    0.06786  -10.21 4.98e-14 ***
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  3.12822    0.08544  36.615  &lt; 2e-16 ***
+Year2020    -0.94969    0.16176  -5.871 4.34e-09 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 0.8873439)
+(Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 144.244  on 53  degrees of freedom
-Residual deviance:  46.043  on 52  degrees of freedom
-AIC: NA
+    Null deviance: 47.7301  on 11  degrees of freedom
+Residual deviance:  9.2776  on 10  degrees of freedom
+AIC: 66.999
 
 Number of Fisher Scoring iterations: 4</code></pre>
 <!-- rnb-output-end -->
@@ -2229,46 +2268,348 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>Self harm related</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1NlbGYgaGFybScpXG5gYGAifQ== -->
-<pre class="r"><code>data &lt;- get_data(mh, &#39;Self harm&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFybSA8LSBnZXRfZGF0YShtaCwgJ1NlbGYgaGFybScpXG5gYGAifQ== -->
+<pre class="r"><code>harm &lt;- get_data(mh, &#39;Self harm&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
 <pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)
 `summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fb3V0KVxuYGBgIn0= -->
-<pre class="r"><code>poisson_out &lt;- glm(total ~ Year, data=data, family=&#39;quasipoisson&#39;)
-summary(poisson_out)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25faGFybSA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPWhhcm0sIGZhbWlseT0ncG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25faGFybSlcbmBgYCJ9 -->
+<pre class="r"><code># Poisson regression
+poisson_harm &lt;- glm(total ~ Year, data=harm, family=&#39;poisson&#39;)
+summary(poisson_harm)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkYXRhKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMy4yNzczICAtMC42MTk2ICAgMC4wNTg5ICAgMC42NzE1ICAgMi40NTcwICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDIuMjgzODkgICAgMC4wNjQ0NyAgMzUuNDIzICA8IDJlLTE2ICoqKlxuWWVhcjIwMjAgICAgLTAuNjAzMDAgICAgMC4xMDg0MSAgLTUuNTYyIDkuMzhlLTA3ICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxLjEwMTU3NilcblxuICAgIE51bGwgZGV2aWFuY2U6IDk4LjEwOCAgb24gNTMgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDYyLjQ2NiAgb24gNTIgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNFxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSB0b3RhbCB+IFllYXIsIGZhbWlseSA9IFwicG9pc3NvblwiLCBkYXRhID0gaGFybSlcblxuRGV2aWFuY2UgUmVzaWR1YWxzOiBcbiAgICBNaW4gICAgICAgMVEgICBNZWRpYW4gICAgICAgM1EgICAgICBNYXggIFxuLTEuMjMxOCAgLTAuNTYwMiAgLTAuMDYyNSAgIDAuMjU1NiAgIDEuNjQxMCAgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgeiB2YWx1ZSBQcig+fHp8KSAgICBcbihJbnRlcmNlcHQpICAgMi4yNTEzICAgICAwLjEzMjUgIDE2Ljk5NyAgIDwyZS0xNiAqKipcblllYXIyMDIwICAgICAtMC41MTY3ICAgICAwLjIxNjcgIC0yLjM4NCAgIDAuMDE3MSAqICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG4oRGlzcGVyc2lvbiBwYXJhbWV0ZXIgZm9yIHBvaXNzb24gZmFtaWx5IHRha2VuIHRvIGJlIDEpXG5cbiAgICBOdWxsIGRldmlhbmNlOiAxMi43NDg1ICBvbiAxMSAgZGVncmVlcyBvZiBmcmVlZG9tXG5SZXNpZHVhbCBkZXZpYW5jZTogIDYuODcxOCAgb24gMTAgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiA1Ni42MDlcblxuTnVtYmVyIG9mIEZpc2hlciBTY29yaW5nIGl0ZXJhdGlvbnM6IDRcbiJ9 -->
 <pre><code>
 Call:
-glm(formula = total ~ Year, family = &quot;quasipoisson&quot;, data = data)
+glm(formula = total ~ Year, family = &quot;poisson&quot;, data = harm)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--3.2773  -0.6196   0.0589   0.6715   2.4570  
+-1.2318  -0.5602  -0.0625   0.2556   1.6410  
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  2.28389    0.06447  35.423  &lt; 2e-16 ***
-Year2020    -0.60300    0.10841  -5.562 9.38e-07 ***
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   2.2513     0.1325  16.997   &lt;2e-16 ***
+Year2020     -0.5167     0.2167  -2.384   0.0171 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasipoisson family taken to be 1.101576)
+(Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 98.108  on 53  degrees of freedom
-Residual deviance: 62.466  on 52  degrees of freedom
-AIC: NA
+    Null deviance: 12.7485  on 11  degrees of freedom
+Residual deviance:  6.8718  on 10  degrees of freedom
+AIC: 56.609
 
 Number of Fisher Scoring iterations: 4</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X2ZpZzIgPC0gZnVuY3Rpb24ocG9pc3Nvbl9maWcyKSB7XG4gIGludiA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9pbnYpKSkgJT4lIFxuICAgIHNsaWNlKDIpICU+JSBcbiAgICBzZWxlY3Qoei52YWx1ZSwgUHIuLi56Li4pXG4gIHN1YiA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9zdWIpKSkgJT4lIFxuICAgIHNsaWNlKDIpICU+JSBcbiAgICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pXG4gIGFsYyA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9hbGMpKSkgJT4lIFxuICAgIHNsaWNlKDIpICU+JSBcbiAgICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pXG4gIG1vb2QgPC0gZGF0YS5mcmFtZShjb2VmKHN1bW1hcnkocG9pc3Nvbl9maWcyJHBvaXNzb25fbW9vZCkpKSAlPiUgXG4gICAgc2xpY2UoMikgJT4lIFxuICAgIHNlbGVjdCh0LnZhbHVlLCBQci4uLnQuLilcbiAgcHN5IDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fZmlnMiRwb2lzc29uX3BzeSkpKSAlPiUgXG4gICAgc2xpY2UoMikgJT4lIFxuICAgIHNlbGVjdCh0LnZhbHVlLCBQci4uLnQuLilcbiAgc2l0IDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fZmlnMiRwb2lzc29uX3NpdCkpKSAlPiUgXG4gICAgc2xpY2UoMikgJT4lIFxuICAgIHNlbGVjdCh6LnZhbHVlLCBQci4uLnouLilcbiAgaGFybSA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9oYXJtKSkpICU+JSBcbiAgICBzbGljZSgyKSAlPiUgXG4gICAgc2VsZWN0KHoudmFsdWUsIFByLi4uei4uKVxuICBcbiAgdG90IDwtIHJiaW5kLmZpbGwoaW52LCBzdWIsIGFsYywgbW9vZCwgcHN5LCBzaXQsIGhhcm0pXG4gIHRvdCR0eXBlIDwtIGMoJ0ludm9sdW50YXJ5IC0gRm9ybSAxJywgJ1N1YnN0YW5jZSByZWxhdGVkJywgJ0FsY29ob2wgcmVsYXRlZCcsICdNb29kIHJlbGF0ZWQnLCAnUHN5Y2hvc2lzIHJlbGF0ZWQnLCAnU2l0dWF0aW9uYWwgY3Jpc2lzJywgJ1NlbGYgaGFybSByZWxhdGVkJylcbiAgcmV0dXJuKHRvdClcbn1cbmBgYCJ9 -->
+<pre class="r"><code>get_fig2 &lt;- function(poisson_fig2) {
+  inv &lt;- data.frame(coef(summary(poisson_fig2$poisson_inv))) %&gt;% 
+    slice(2) %&gt;% 
+    select(z.value, Pr...z..)
+  sub &lt;- data.frame(coef(summary(poisson_fig2$poisson_sub))) %&gt;% 
+    slice(2) %&gt;% 
+    select(t.value, Pr...t..)
+  alc &lt;- data.frame(coef(summary(poisson_fig2$poisson_alc))) %&gt;% 
+    slice(2) %&gt;% 
+    select(t.value, Pr...t..)
+  mood &lt;- data.frame(coef(summary(poisson_fig2$poisson_mood))) %&gt;% 
+    slice(2) %&gt;% 
+    select(t.value, Pr...t..)
+  psy &lt;- data.frame(coef(summary(poisson_fig2$poisson_psy))) %&gt;% 
+    slice(2) %&gt;% 
+    select(t.value, Pr...t..)
+  sit &lt;- data.frame(coef(summary(poisson_fig2$poisson_sit))) %&gt;% 
+    slice(2) %&gt;% 
+    select(z.value, Pr...z..)
+  harm &lt;- data.frame(coef(summary(poisson_fig2$poisson_harm))) %&gt;% 
+    slice(2) %&gt;% 
+    select(z.value, Pr...z..)
+  
+  tot &lt;- rbind.fill(inv, sub, alc, mood, psy, sit, harm)
+  tot$type &lt;- c(&#39;Involuntary - Form 1&#39;, &#39;Substance related&#39;, &#39;Alcohol related&#39;, &#39;Mood related&#39;, &#39;Psychosis related&#39;, &#39;Situational crisis&#39;, &#39;Self harm related&#39;)
+  return(tot)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9pc3Nvbl9maWcyIDwtIGxpc3QocG9pc3Nvbl9pbnY9cG9pc3Nvbl9pbnYsIHBvaXNzb25fc3ViPXBvaXNzb25fc3ViLCBwb2lzc29uX2FsYz1wb2lzc29uX2FsYywgcG9pc3Nvbl9tb29kPXBvaXNzb25fbW9vZCwgcG9pc3Nvbl9wc3k9cG9pc3Nvbl9wc3ksIHBvaXNzb25fc2l0PXBvaXNzb25fc2l0LCBwb2lzc29uX2hhcm09cG9pc3Nvbl9oYXJtKVxuYGBgIn0= -->
+<pre class="r"><code>poisson_fig2 &lt;- list(poisson_inv=poisson_inv, poisson_sub=poisson_sub, poisson_alc=poisson_alc, poisson_mood=poisson_mood, poisson_psy=poisson_psy, poisson_sit=poisson_sit, poisson_harm=poisson_harm)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlnMiA8LSBnZXRfZmlnMihwb2lzc29uX2ZpZzIpXG53cml0ZV9jc3YoZmlnMiwgJ3N0YXRfdGVzdHMvZmlnMi5jc3YnKVxuYGBgIn0= -->
+<pre class="r"><code>fig2 &lt;- get_fig2(poisson_fig2)
+write_csv(fig2, &#39;stat_tests/fig2.csv&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="figure-3" class="section level2">
+<h2>Figure 3</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2Vla3MgPC0gYygnTWFyY2ggMTUgLSBNYXJjaCAyMScsICdNYXIgMjIgLSBNYXIgMjgnLCAnTWFyIDI5IC0gQXByIDQnLCAnQXByaWwgNSAtIDExJywgJ0FwcmlsIDEyIC0gMTgnLCAnQXByaWwgMTkgLSAyNScsICdBcHJpbCAyNiAtIE1heSAyJylcbmBgYCJ9 -->
+<pre class="r"><code>weeks &lt;- c(&#39;March 15 - March 21&#39;, &#39;Mar 22 - Mar 28&#39;, &#39;Mar 29 - Apr 4&#39;, &#39;April 5 - 11&#39;, &#39;April 12 - 18&#39;, &#39;April 19 - 25&#39;, &#39;April 26 - May 2&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Suicide</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VpY2lkZSA8LSBwb2wgJT4lXG4gIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSBcbiAgZmlsdGVyKFN1YnR5cGU9PSdTdWljaWRlIGF0dGVtcHQnKSAlPiUgXG4gIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSBcbiAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpXG5gYGAifQ== -->
+<pre class="r"><code>suicide &lt;- pol %&gt;%
+  filter(week %in% weeks) %&gt;% 
+  filter(Subtype==&#39;Suicide attempt&#39;) %&gt;% 
+  group_by(Year, week) %&gt;% 
+  summarize(count=sum(count))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
+<pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fc3VpIDwtIGdsbShjb3VudCB+IFllYXIsIGRhdGE9c3VpY2lkZSwgZmFtaWx5PSdwb2lzc29uJylcbnN1bW1hcnkocG9pc3Nvbl9zdWkpXG5gYGAifQ== -->
+<pre class="r"><code># Poisson regression
+poisson_sui &lt;- glm(count ~ Year, data=suicide, family=&#39;poisson&#39;)
+summary(poisson_sui)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBjb3VudCB+IFllYXIsIGZhbWlseSA9IFwicG9pc3NvblwiLCBkYXRhID0gc3VpY2lkZSlcblxuRGV2aWFuY2UgUmVzaWR1YWxzOiBcbiAgICAgTWluICAgICAgICAxUSAgICBNZWRpYW4gICAgICAgIDNRICAgICAgIE1heCAgXG4tMS4zNDMxOCAgLTAuNTE4MzkgIC0wLjIxNzc4ICAgMC4wNzk2MyAgIDIuMDM5ODUgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHogdmFsdWUgUHIoPnx6fCkgICAgXG4oSW50ZXJjZXB0KSA3ODAuODc0OSAgIDE4Ni45OTE1ICAgNC4xNzYgMi45N2UtMDUgKioqXG5ZZWFyICAgICAgICAgLTAuMzg0OSAgICAgMC4wOTI2ICAtNC4xNTYgMy4yNGUtMDUgKioqXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxKVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMjcuNDc2MCAgb24gMTEgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6ICA5Ljg4MTYgIG9uIDEwICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogODAuMDA5XG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA0XG4ifQ== -->
+<pre><code>
+Call:
+glm(formula = count ~ Year, family = &quot;poisson&quot;, data = suicide)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.34318  -0.51839  -0.21778   0.07963   2.03985  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) 780.8749   186.9915   4.176 2.97e-05 ***
+Year         -0.3849     0.0926  -4.156 3.24e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 27.4760  on 11  degrees of freedom
+Residual deviance:  9.8816  on 10  degrees of freedom
+AIC: 80.009
+
+Number of Fisher Scoring iterations: 4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Alcohol</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9sX2FsY29ob2wgPC0gcG9sICU+JVxuICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgXG4gIGZpbHRlcihTdWJ0eXBlPT0nSW50b3hpY2F0ZWQnKSAlPiUgXG4gIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSBcbiAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpXG5gYGAifQ== -->
+<pre class="r"><code>pol_alcohol &lt;- pol %&gt;%
+  filter(week %in% weeks) %&gt;% 
+  filter(Subtype==&#39;Intoxicated&#39;) %&gt;% 
+  group_by(Year, week) %&gt;% 
+  summarize(count=sum(count))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
+<pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fcG9sX2FsYyA8LSBnbG0oY291bnQgfiBZZWFyLCBkYXRhPXBvbF9hbGNvaG9sLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fcG9sX2FsYylcbmBgYCJ9 -->
+<pre class="r"><code># Poisson regression
+poisson_pol_alc &lt;- glm(count ~ Year, data=pol_alcohol, family=&#39;quasipoisson&#39;)
+summary(poisson_pol_alc)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBjb3VudCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBwb2xfYWxjb2hvbClcblxuRGV2aWFuY2UgUmVzaWR1YWxzOiBcbiAgICBNaW4gICAgICAgMVEgICBNZWRpYW4gICAgICAgM1EgICAgICBNYXggIFxuLTUuODMxMCAgLTEuMzM5OCAgIDAuNDc2MCAgIDAuOTUwOCAgIDIuODQyNCAgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KVxuKEludGVyY2VwdCkgODUxLjM3ODkgICA2NTAuNjM2OCAgIDEuMzA5ICAgIDAuMjIwXG5ZZWFyICAgICAgICAgLTAuNDIwMyAgICAgMC4zMjIyICAtMS4zMDQgICAgMC4yMjFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBxdWFzaXBvaXNzb24gZmFtaWx5IHRha2VuIHRvIGJlIDQuMTk3ODA1KVxuXG4gICAgTnVsbCBkZXZpYW5jZTogNjQuODE0ICBvbiAxMSAgZGVncmVlcyBvZiBmcmVlZG9tXG5SZXNpZHVhbCBkZXZpYW5jZTogNTcuNTEzICBvbiAxMCAgZGVncmVlcyBvZiBmcmVlZG9tXG5BSUM6IE5BXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA1XG4ifQ== -->
+<pre><code>
+Call:
+glm(formula = count ~ Year, family = &quot;quasipoisson&quot;, data = pol_alcohol)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-5.8310  -1.3398   0.4760   0.9508   2.8424  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept) 851.3789   650.6368   1.309    0.220
+Year         -0.4203     0.3222  -1.304    0.221
+
+(Dispersion parameter for quasipoisson family taken to be 4.197805)
+
+    Null deviance: 64.814  on 11  degrees of freedom
+Residual deviance: 57.513  on 10  degrees of freedom
+AIC: NA
+
+Number of Fisher Scoring iterations: 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Assault</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXNzYXVsdCA8LSBwb2wgJT4lXG4gIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSBcbiAgZmlsdGVyKFN1YnR5cGU9PSdBc3NhdWx0JykgJT4lIFxuICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgXG4gIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKVxuYGBgIn0= -->
+<pre class="r"><code>assault &lt;- pol %&gt;%
+  filter(week %in% weeks) %&gt;% 
+  filter(Subtype==&#39;Assault&#39;) %&gt;% 
+  group_by(Year, week) %&gt;% 
+  summarize(count=sum(count))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
+<pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fYXNzIDwtIGdsbShjb3VudCB+IFllYXIsIGRhdGE9YXNzYXVsdCwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKVxuc3VtbWFyeShwb2lzc29uX2FzcylcbmBgYCJ9 -->
+<pre class="r"><code># Poisson regression
+poisson_ass &lt;- glm(count ~ Year, data=assault, family=&#39;quasipoisson&#39;)
+summary(poisson_ass)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBjb3VudCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBhc3NhdWx0KVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tNy4wOTQ2ICAtMC40MzE4ICAgMC4yNjYxICAgMS4wMzkyICAgMi4zNzcwICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpXG4oSW50ZXJjZXB0KSA1ODguNTE3NSAgIDUxMi40OTA4ICAgMS4xNDggICAgMC4yNzhcblllYXIgICAgICAgICAtMC4yODk5ICAgICAwLjI1MzggIC0xLjE0MiAgICAwLjI4MFxuXG4oRGlzcGVyc2lvbiBwYXJhbWV0ZXIgZm9yIHF1YXNpcG9pc3NvbiBmYW1pbHkgdGFrZW4gdG8gYmUgNC4xNjI2MjEpXG5cbiAgICBOdWxsIGRldmlhbmNlOiA3MS40MTkgIG9uIDExICBkZWdyZWVzIG9mIGZyZWVkb21cblJlc2lkdWFsIGRldmlhbmNlOiA2NS45MzAgIG9uIDEwICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogTkFcblxuTnVtYmVyIG9mIEZpc2hlciBTY29yaW5nIGl0ZXJhdGlvbnM6IDVcbiJ9 -->
+<pre><code>
+Call:
+glm(formula = count ~ Year, family = &quot;quasipoisson&quot;, data = assault)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-7.0946  -0.4318   0.2661   1.0392   2.3770  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept) 588.5175   512.4908   1.148    0.278
+Year         -0.2899     0.2538  -1.142    0.280
+
+(Dispersion parameter for quasipoisson family taken to be 4.162621)
+
+    Null deviance: 71.419  on 11  degrees of freedom
+Residual deviance: 65.930  on 10  degrees of freedom
+AIC: NA
+
+Number of Fisher Scoring iterations: 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Domestic abuse</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZG9tZXN0aWMgPC0gcG9sICU+JVxuICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgXG4gIGZpbHRlcihTdWJ0eXBlPT0nRG9tZXN0aWMgZGlzcHV0ZScpICU+JSBcbiAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIFxuICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSlcbmBgYCJ9 -->
+<pre class="r"><code>domestic &lt;- pol %&gt;%
+  filter(week %in% weeks) %&gt;% 
+  filter(Subtype==&#39;Domestic dispute&#39;) %&gt;% 
+  group_by(Year, week) %&gt;% 
+  summarize(count=sum(count))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
+<pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fZG9tIDwtIGdsbShjb3VudCB+IFllYXIsIGRhdGE9ZG9tZXN0aWMsIGZhbWlseT0ncXVhc2lwb2lzc29uJylcbnN1bW1hcnkocG9pc3Nvbl9kb20pXG5gYGAifQ== -->
+<pre class="r"><code># Poisson regression
+poisson_dom &lt;- glm(count ~ Year, data=domestic, family=&#39;quasipoisson&#39;)
+summary(poisson_dom)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBjb3VudCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBkb21lc3RpYylcblxuRGV2aWFuY2UgUmVzaWR1YWxzOiBcbiAgICAgTWluICAgICAgICAxUSAgICBNZWRpYW4gICAgICAgIDNRICAgICAgIE1heCAgXG4tMTQuMjcxMiAgIC0wLjE0MTkgICAgMC43OTc1ICAgIDEuMzEzNiAgICAzLjEyODkgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpXG4oSW50ZXJjZXB0KSAtNDg1LjgyMDIgICA0MDAuNTUyMCAgLTEuMjEzICAgIDAuMjUzXG5ZZWFyICAgICAgICAgICAwLjI0MjkgICAgIDAuMTk4MyAgIDEuMjI1ICAgIDAuMjQ5XG5cbihEaXNwZXJzaW9uIHBhcmFtZXRlciBmb3IgcXVhc2lwb2lzc29uIGZhbWlseSB0YWtlbiB0byBiZSAxMy40NzAwMSlcblxuICAgIE51bGwgZGV2aWFuY2U6IDI1NC42OSAgb24gMTEgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6IDIzNC4zMyAgb24gMTAgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiBOQVxuXG5OdW1iZXIgb2YgRmlzaGVyIFNjb3JpbmcgaXRlcmF0aW9uczogNVxuIn0= -->
+<pre><code>
+Call:
+glm(formula = count ~ Year, family = &quot;quasipoisson&quot;, data = domestic)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-14.2712   -0.1419    0.7975    1.3136    3.1289  
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept) -485.8202   400.5520  -1.213    0.253
+Year           0.2429     0.1983   1.225    0.249
+
+(Dispersion parameter for quasipoisson family taken to be 13.47001)
+
+    Null deviance: 254.69  on 11  degrees of freedom
+Residual deviance: 234.33  on 10  degrees of freedom
+AIC: NA
+
+Number of Fisher Scoring iterations: 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Crisis calls</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3Jpc2lzIDwtIHBvbCAlPiVcbiAgZmlsdGVyKHdlZWsgJWluJSB3ZWVrcykgJT4lIFxuICBmaWx0ZXIoU3VidHlwZT09J0NyaXNpcyBjYWxsIHZvbHVtZScpICU+JSBcbiAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIFxuICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSlcbmBgYCJ9 -->
+<pre class="r"><code>crisis &lt;- pol %&gt;%
+  filter(week %in% weeks) %&gt;% 
+  filter(Subtype==&#39;Crisis call volume&#39;) %&gt;% 
+  group_by(Year, week) %&gt;% 
+  summarize(count=sum(count))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCByZWdyb3VwaW5nIG91dHB1dCBieSAnWWVhcicgKG92ZXJyaWRlIHdpdGggYC5ncm91cHNgIGFyZ3VtZW50KVxuIn0= -->
+<pre><code>`summarise()` regrouping output by &#39;Year&#39; (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQb2lzc29uIHJlZ3Jlc3Npb25cbnBvaXNzb25fY3JpIDwtIGdsbShjb3VudCB+IFllYXIsIGRhdGE9Y3Jpc2lzLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpXG5zdW1tYXJ5KHBvaXNzb25fY3JpKVxuYGBgIn0= -->
+<pre class="r"><code># Poisson regression
+poisson_cri &lt;- glm(count ~ Year, data=crisis, family=&#39;quasipoisson&#39;)
+summary(poisson_cri)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBjb3VudCB+IFllYXIsIGZhbWlseSA9IFwicXVhc2lwb2lzc29uXCIsIGRhdGEgPSBjcmlzaXMpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgTWluICAgICAgIDFRICAgTWVkaWFuICAgICAgIDNRICAgICAgTWF4ICBcbi00LjY5MjYgIC0wLjc4NjkgICAwLjU0NTcgICAxLjQxMDYgICAyLjI2MTAgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICAgXG4oSW50ZXJjZXB0KSAzMjkuOTkyOCAgICA3MS4yODczICAgNC42MjkgMC4wMDA5MzggKioqXG5ZZWFyICAgICAgICAgLTAuMTU5OSAgICAgMC4wMzUzICAtNC41MzEgMC4wMDEwOTAgKiogXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBxdWFzaXBvaXNzb24gZmFtaWx5IHRha2VuIHRvIGJlIDQuMTI3NDM5KVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMTI3LjE5NCAgb24gMTEgIGRlZ3JlZXMgb2YgZnJlZWRvbVxuUmVzaWR1YWwgZGV2aWFuY2U6ICA0Mi4yMDEgIG9uIDEwICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogTkFcblxuTnVtYmVyIG9mIEZpc2hlciBTY29yaW5nIGl0ZXJhdGlvbnM6IDNcbiJ9 -->
+<pre><code>
+Call:
+glm(formula = count ~ Year, family = &quot;quasipoisson&quot;, data = crisis)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-4.6926  -0.7869   0.5457   1.4106   2.2610  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 329.9928    71.2873   4.629 0.000938 ***
+Year         -0.1599     0.0353  -4.531 0.001090 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for quasipoisson family taken to be 4.127439)
+
+    Null deviance: 127.194  on 11  degrees of freedom
+Residual deviance:  42.201  on 10  degrees of freedom
+AIC: NA
+
+Number of Fisher Scoring iterations: 3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdWkgPC0gZGF0YS5mcmFtZShjb2VmKHN1bW1hcnkocG9pc3Nvbl9zdWkpKSkgJT4lIFxuICBzbGljZSgyKSAlPiUgXG4gIHNlbGVjdCh6LnZhbHVlLCBQci4uLnouLilcbnBvbF9hbGMgPC0gZGF0YS5mcmFtZShjb2VmKHN1bW1hcnkocG9pc3Nvbl9wb2xfYWxjKSkpICU+JSBcbiAgc2xpY2UoMikgJT4lIFxuICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pXG5hc3MgPC0gZGF0YS5mcmFtZShjb2VmKHN1bW1hcnkocG9pc3Nvbl9hc3MpKSkgJT4lIFxuICBzbGljZSgyKSAlPiUgXG4gIHNlbGVjdCh0LnZhbHVlLCBQci4uLnQuLilcbmRvbSA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2RvbSkpKSAlPiUgXG4gIHNsaWNlKDIpICU+JSBcbiAgc2VsZWN0KHQudmFsdWUsIFByLi4udC4uKVxuY3JpIDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fY3JpKSkpICU+JSBcbiAgc2xpY2UoMikgJT4lIFxuICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pXG5cbnRvdCA8LSByYmluZC5maWxsKHN1aSwgcG9sX2FsYywgYXNzLCBkb20sIGNyaSlcbnRvdCR0eXBlIDwtIGMoJ1N1aWNpZGUnLCAnQWxjb2hvbCcsICdBc3NhdWx0JywgJ0RvbWVzdGljIERpc3B1dGVzJywgJ0NyaXNpcyBjYWxscycpXG5cbndyaXRlX2Nzdih0b3QsICdzdGF0X3Rlc3RzL2ZpZzMuY3N2JylcbmBgYCJ9 -->
+<pre class="r"><code>
+sui &lt;- data.frame(coef(summary(poisson_sui))) %&gt;% 
+  slice(2) %&gt;% 
+  select(z.value, Pr...z..)
+pol_alc &lt;- data.frame(coef(summary(poisson_pol_alc))) %&gt;% 
+  slice(2) %&gt;% 
+  select(t.value, Pr...t..)
+ass &lt;- data.frame(coef(summary(poisson_ass))) %&gt;% 
+  slice(2) %&gt;% 
+  select(t.value, Pr...t..)
+dom &lt;- data.frame(coef(summary(poisson_dom))) %&gt;% 
+  slice(2) %&gt;% 
+  select(t.value, Pr...t..)
+cri &lt;- data.frame(coef(summary(poisson_cri))) %&gt;% 
+  slice(2) %&gt;% 
+  select(t.value, Pr...t..)
+
+tot &lt;- rbind.fill(sui, pol_alc, ass, dom, cri)
+tot$type &lt;- c(&#39;Suicide&#39;, &#39;Alcohol&#39;, &#39;Assault&#39;, &#39;Domestic Disputes&#39;, &#39;Crisis calls&#39;)
+
+write_csv(tot, &#39;stat_tests/fig3.csv&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ292aWQtMTkgTWVudGFsIEhlYWx0aCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgTG9hZCBwYWNrYWdlcwpgYGB7cn0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkocmVhZHhsKQpsaWJyYXJ5KHRpYmJsZXRpbWUpCmxpYnJhcnkobHVicmlkYXRlKQpgYGAKCk9ic2VydmF0aW9uYWwgcGVyaW9kIGJldHdlZW4gTWFyY2ggNSBhbmQgU2VwdGVtYmVyIDUsIDIwMjAKYGBge3J9CiMgdm9sdW1lIGRhdGEKY21oX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgVm9sdW1lIENhbWJyaWRnZS54bHN4JykKZ3JoX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgdm9sdW1lcyBHUkgueGxzeCcpCnNtaF9lZCA8LSByZWFkX2V4Y2VsKCdkYXRhL0VEIHZvbHVtZXMgU01ILnhsc3gnKQoKIyBtZW50YWwgaGVhbHRoIGRhdGEKY21oX21oIDwtIHJlYWRfZXhjZWwoJ2RhdGEvQ09WSUQtMTkgZGF0YSBzaGVldCBlZGl0ZWQgSmFuIDIzLnhsc3gnLCBzaGVldD0nY21oJykgJT4lCiAgcmVwbGFjZShpcy5uYSguKSwgMCkgJT4lIAogIHBpdm90X2xvbmdlcihjb2xzID0gYE1hcmNoIDEgLSBNYXJjaCA3YDpgQXVndXN0IDMwdGggLSBTZXB0ZW1iZXIgNXRoYCwKICAgICAgICAgICAgICAgbmFtZXNfdG89J3dlZWsnLAogICAgICAgICAgICAgICB2YWx1ZXNfdG89J2NvdW50JykKCmdyaF9taCA8LSByZWFkX2V4Y2VsKCdkYXRhL0NPVklELTE5IGRhdGEgc2hlZXQgZWRpdGVkIEphbiAyMy54bHN4Jywgc2hlZXQ9J2dyaCcpICU+JQogIHJlcGxhY2UoaXMubmEoLiksIDApICU+JSAKICBwaXZvdF9sb25nZXIoY29scyA9IGBNYXJjaCAxIC0gTWFyY2ggN2A6YEF1Z3VzdCAzMHRoIC0gU2VwdGVtYmVyIDV0aGAsCiAgICAgICAgICAgICAgIG5hbWVzX3RvPSd3ZWVrJywKICAgICAgICAgICAgICAgdmFsdWVzX3RvPSdjb3VudCcpCgpzbWhfbWggPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdzbWgnKSAlPiUKICByZXBsYWNlKGlzLm5hKC4pLCAwKSAlPiUgCiAgcGl2b3RfbG9uZ2VyKGNvbHMgPSBgTWFyY2ggMSAtIE1hcmNoIDdgOmBBdWd1c3QgMzB0aCAtIFNlcHRlbWJlciA1dGhgLAogICAgICAgICAgICAgICBuYW1lc190bz0nd2VlaycsCiAgICAgICAgICAgICAgIHZhbHVlc190bz0nY291bnQnKQoKIyBQb2xpY2UgZGF0YQpwb2xpY2UgPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdwb2wnKQpgYGAKCkdldCB0b3RhbCB2b2x1bWUKYGBge3J9CnZvbCA8LSBzbWhfZWQgJT4lIGxlZnRfam9pbihncmhfZWQsIGJ5PWMoIkRhdGUgb2YgRUQgdmlzaXQgKHJlZykiID0gIkRheSBvZiBUcmlhZ2VfRFQiKSkgJT4lIAogIGxlZnRfam9pbihjbWhfZWQsIGJ5PWMoIkRhdGUgb2YgRUQgdmlzaXQgKHJlZykiID0gIlRyaWFnZSBEYXRlIikpICU+JSAKICByZW5hbWUoZGF0ZT1gRGF0ZSBvZiBFRCB2aXNpdCAocmVnKWAsIHNtaD1gIyBvZiBjYXNlc2AsIGdyaD1gTnVtYmVyIG9mIFJlY29yZHNgLCBjbWg9Vm9sdW1lKSAlPiUgCiAgbXV0YXRlKHRvdGFsPXNtaCtncmgrY21oKSAlPiUgCiAgbXV0YXRlKHllYXI9YXMuZmFjdG9yKHllYXIoZGF0ZSkpKQpgYGAKCkVEIHZpc2l0cyBkdXJpbmcgbG9ja2Rvd24gIApMaW5lIGdyYXBoCmBgYHtyfQpwIDwtIHZvbCAlPiUgZHJvcF9uYSgpICU+JSAKICBtdXRhdGUoZGF0ZSA9IGlmX2Vsc2UoeWVhcj09MjAxOSwgZGF0ZSt5ZWFycygxKSwgZGF0ZSkpICU+JQogIGdncGxvdChhZXMoeD1kYXRlLCB5PXRvdGFsLCBjb2xvcj15ZWFyKSkgKwogIGdlb21fbGluZSgpICsKICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzPWMoImdyZWVuIiwgImJsdWUiKSkgKwogIHlsYWIoJ2RhaWx5IEVEIHZpc2l0cycpICsKICBhbm5vdGF0ZSgncmVjdCcsIHhtaW49YXMuUE9TSVhjdCgnMjAyMC0wMy0xNycpLCB4bWF4PWFzLlBPU0lYY3QoJzIwMjAtMDUtMDQnKSwKICAgICAgICAgICB5bWluPS1JbmYsIHltYXg9SW5mLCBmaWxsPSdyZWQnLCBhbHBoYT0wLjMpCmdnc2F2ZSgnZ3JhcGhzL3ZvbC5wbmcnLCBwLCBoZWlnaHQgPSA4LjUsIHdpZHRoID0gMTEsIHVuaXRzID0gJ2luJykKcApgYGAKCkhpc3RvZ3JhbSAoZm9yIHBvdGVudGlhbCBBTk9WQSkKYGBge3J9CnZvbCAlPiUgbXV0YXRlKGRhdGU9YXMuRGF0ZShkYXRlKSkgJT4lIAogIGZpbHRlcihkYXRlPj0nMjAxOS0wMy0xNycgJiBkYXRlPD0nMjAyMC0wNS0wNCcpICU+JSAKICBmaWx0ZXIoZGF0ZTw9JzIwMTktMDUtMDQnIHwgZGF0ZT49JzIwMjAtMDMtMTcnKSAlPiUgCiAgZ2dwbG90KGFlcyh4PXRvdGFsLCBmaWxsPXllYXIpKSArCiAgZ2VvbV9oaXN0b2dyYW0oKQpgYGAKClBvaXNzb24gRUQgdmlzaXRzIGR1cmluZyBsb2NrZG93biAgCiAgCldlJ3JlIGxvb2tpbmcgYXQgdGhlIGRpZmZlcmVuY2UgaW4gb3V0Y29tZSAoaG9zcGl0YWxpemF0aW9ucykgYmFzZWQgb24gYXQgbGVhc3Qgb25lIHByZWRpY3RvciAoeWVhcikuIFRoYXQncyBnZW5lcmFsIGxpbmVhciBtb2RlbCB0ZXJyaXRvcnkuIElmIHlvdSBhcmUgc3VtbWFyaXppbmcgb3ZlciBzb21lIHBlcmlvZCAoZS5nLiwgdGhlIGF2ZXJhZ2UgYWNyb3NzIHRoZSBzaGFkZWQgYXJlYSksIHRoZW4gdGhlIGZvcm11bGF0aW9uIG9mIEdMTSB0aGF0IHdlIHJlZmVyIHRvIGFzIEFOT1ZBIGZvciBzaG9ydGhhbmQgd291bGQgcHJvYmFibHkgYmUgT0suIElmIHlvdSBhcmUgbm90IHN1bW1hcml6aW5nLCBhbmQgYXJlIHVzaW5nIHRoZSBpbmRpdmlkdWFsIGRhdGEgcG9pbnRzLCB0aGVuIHlvdSdsbCBiZSB2aW9sYXRpbmcgc29tZSBvZiB0aGUgYXNzdW1wdGlvbnMgb2YgR0xNIC0tIG91ciBvYnNlcnZhdGlvbnMgYXJlIG5vdCBpbmRlcGVuZGVudCwgYmVjYXVzZSB0aGUgcmF0ZSBvbiBPY3QgMiBpcyBtb3JlIHJlbGF0ZWQgdG8gdGhlIHJhdGUgb24gT2N0IDMgdGhhbiBpdCBpcyB0byBBcHJpbCAzIChmb3IgZXhhbXBsZSkuIEluIG90aGVyIHdvcmRzLCB0aGVzZSBhcmUgdGltZSBzZXJpZXMgZGF0YSwgd2hlcmUgdGhlcmUgaXMgYSB0cmVuZCBoYXBwZW5pbmcsIGFuZCB0byBpZ25vcmUgdGhhdCB3b3VsZCB2aW9sYXRlIHRoZSBhc3N1bXB0aW9uIG9mIChyZXNpZHVhbCkgaW5kZXBlbmRlbmNlLiAgCiAgClNlY29uZCwgd2UgbWlnaHQgYmUgdmlvbGF0aW5nIHRoZSBhc3N1bXB0aW9uIHRoYXQgb3VyIHJlc2lkdWFscyBhcmUgbm9ybWFsbHkgZGlzdHJpYnV0ZWQsIGJlY2F1c2Ugd2Uga25vdyB0aGlzIHR5cGUgb2YgZGF0YSAoY291bnRzKSBoYXMgYmVlbiBkcmF3biBmcm9tIHNvbWV0aGluZyBvdGhlciB0aGFuIGEgbm9ybWFsIGRpc3RyaWJ1dGlvbiwgYmVjYXVzZSBvbmx5IGludGVnZXJzIGFyZSBwb3NzaWJsZSBhbmQgdGhlIGNvdW50cyBhcmUgYm91bmRlZCBhdCB6ZXJvIChub3JtYWwgZGlzdHJpYnV0aW9uIGhhcyBsaW1pdHMgb2YgKy8tIGluZmluaXR5KS4gU28sIHdlIHNob3VsZCBiZSB0aGlua2luZyBhYm91dCBhbHRlcmluZyBvdXIgR0xNIHRvIGV4cGVjdCBhIGRpZmZlcmVudCBkaXN0cmlidXRpb24sIGxpa2UgUG9pc3Nvbi4gSG93ZXZlciwgaXQgdHVybnMgb3V0IHRoYXQgYmVjYXVzZSB0aGUgYmlnIHByb2JsZW0gd2l0aCBjb3VudCBkYXRhIGlzIHRoZSBib3VuZGFyeSBhdCB6ZXJvLCB3aGVuIG91ciBjb3VudHMgYXJlIGFsbCBmYXIgYXdheSBmcm9tIHplcm8sIHRoZSByZXN1bHRzIG9mIGEgbW9kZWwgd2hlcmUgd2UgYXNzdW1lIGEgbm9ybWFsIGRpc3RyaWJ1dGlvbiBhbmQgd2hlcmUgd2UgYXNzdW1lIGEgUG9pc3NvbiBkaXN0cmlidXRpb24gY29udmVyZ2UuIEluIHRoZSBub3JtYWwgZGlzdHJpYnV0aW9uLCB5b3UgZ2V0IGRlY2ltYWwgcG9pbnRzIGluIHlvdXIgZXN0aW1hdGUsIHdoaWNoIGRvbid0IHJlYWxseSBtYWtlIHNlbnNlIChjYW4ndCBoYXZlIGhhbGYgYW4gRVIgdmlzaXQpLCBidXQgdGhpcyBjYW4gZWFzaWx5IGJlIGlnbm9yZWQuIElmIHlvdSBjYW4gbGl2ZSB3aXRoIHRoYXQsIHRoZW4geW91IG1pZ2h0IGRvIHRoZSBBTk9WQS4gQnV0LCBpZiB5b3UgY2FuIHN0b21hY2ggaXQsIFBvaXNzb24gaXMgdGhlIG1vcmUgY29ycmVjdCB2ZXJzaW9uLiAgCiAgCkluIHN1bW1hcnksIGNhbid0IHVzZSBBTk9WQSBiZWNhdXNlIGl0IHZpb2xhdGVzIHR3byBhc3N1bXB0aW9uczogIAoxLiBUaGUgb2JzZXJ2YXRpb25zIGFyZSBub3QgaW5kZXBlbmRlbnQgIAoyLiBUaGUgcmVzaWR1YWxzIGFyZSBub3Qgbm9ybWFsbHkgZGlzdHJpYnV0ZWQgIAogIApXZSB1c2UgUG9pc3NvbiByZWdyZXNzaW9uIGJlY2F1c2U6ICAKMS4gSXQgY2FuIGhhbmRsZSBvYnNlcnZhdGlvbnMgdGhhdCBhcmUgbm90IGluZGVwZW5kZW50ICAKMi4gQ291bnRzIGFyZSBkcmF3biBmcm9tIHNvbWV0aGluZyBvdGhlciB0aGFuIGEgbm9ybWFsIGRpc3RyaWJ1dGlvbiwgaS5lLiBhIFBvaXNzb24gZGlzdHJpYnV0aW9uICAKICAKQmVmb3JlIHN0YXJ0aW5nIHRvIGludGVycHJldCByZXN1bHRzLCBsZXTigJlzIGNoZWNrIHdoZXRoZXIgdGhlIG1vZGVsIGhhcyBvdmVyLWRpc3BlcnNpb24gb3IgdW5kZXItZGlzcGVyc2lvbi4gSWYgdGhlIFJlc2lkdWFsIERldmlhbmNlIGlzIGdyZWF0ZXIgdGhhbiB0aGUgZGVncmVlcyBvZiBmcmVlZG9tLCB0aGVuIG92ZXItZGlzcGVyc2lvbiBleGlzdHMuIFRoaXMgbWVhbnMgdGhhdCB0aGUgZXN0aW1hdGVzIGFyZSBjb3JyZWN0LCBidXQgdGhlIHN0YW5kYXJkIGVycm9ycyAoc3RhbmRhcmQgZGV2aWF0aW9uKSBhcmUgd3JvbmcgYW5kIHVuYWNjb3VudGVkIGZvciBieSB0aGUgbW9kZWwuICAKICAKU28sIHRvIGhhdmUgYSBtb3JlIGNvcnJlY3Qgc3RhbmRhcmQgZXJyb3Igd2UgY2FuIHVzZSBhIHF1YXNpLXBvaXNzb24gbW9kZWw6CmBgYHtyfQpkYXRhIDwtIHZvbCAlPiUgbXV0YXRlKGRhdGU9YXMuRGF0ZShkYXRlKSkgJT4lIAogIGZpbHRlcihkYXRlPj0nMjAxOS0wMy0xNycgJiBkYXRlPD0nMjAyMC0wNS0wNCcpICU+JSAKICBmaWx0ZXIoZGF0ZTw9JzIwMTktMDUtMDQnIHwgZGF0ZT49JzIwMjAtMDMtMTcnKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4geWVhciwgZmFtaWx5PSdxdWFzaXBvaXNzb24nLCBkYXRhPWRhdGEpCnN1bW1hcnkocG9pc3Nvbl9vdXQpCmBgYAoKYGBge3J9CmdldF9kYXRhIDwtIGZ1bmN0aW9uKGRhdGEsIHR5cGUsIHN1YnR5cGU9TlVMTCkgewogIGlmIChpcy5udWxsKHN1YnR5cGUpKSB7CiAgICBzbWggPC0gZGF0YSRzbWhfbWggJT4lCiAgICAgIGZpbHRlcihUeXBlPT10eXBlKSAlPiUgCiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSAKICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSAKICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpCiAgICBncmggPC0gZGF0YSRncmhfbWggJT4lCiAgICAgIGZpbHRlcihUeXBlPT10eXBlKSAlPiUgCiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSAKICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSAKICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpCiAgICBjbWggPC0gZGF0YSRjbWhfbWggJT4lCiAgICAgIGZpbHRlcihUeXBlPT10eXBlKSAlPiUgCiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSAKICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSAKICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpCiAgfSBlbHNlIHsKICAgIHNtaCA8LSBkYXRhJHNtaF9taCAlPiUKICAgICAgZmlsdGVyKFR5cGU9PXR5cGUsIFN1YnR5cGU9PXN1YnR5cGUpICU+JSAKICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIAogICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIAogICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSkKICAgIGdyaCA8LSBkYXRhJGdyaF9taCAlPiUKICAgICAgZmlsdGVyKFR5cGU9PXR5cGUsIFN1YnR5cGU9PXN1YnR5cGUpICU+JSAKICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIAogICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIAogICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSkKICAgIGNtaCA8LSBkYXRhJGNtaF9taCAlPiUKICAgICAgZmlsdGVyKFR5cGU9PXR5cGUsIFN1YnR5cGU9PXN1YnR5cGUpICU+JSAKICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIAogICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIAogICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSkKICB9CiAgd2hvbGUgPC0gc21oICU+JSAKICAgIGxlZnRfam9pbihncmgsIGJ5PSdkYXRlJykgJT4lCiAgICBsZWZ0X2pvaW4oY21oLCBieT0nZGF0ZScpICU+JSAKICAgIG11dGF0ZSh0b3RhbD1jb3VudCtjb3VudC54K2NvdW50LnkpICU+JSAKICAgIHNlbGVjdChZZWFyLCB3ZWVrLCB0b3RhbCkgJT4lIAogICAgbXV0YXRlKFllYXI9YXMuZmFjdG9yKFllYXIpKQogIHJldHVybih3aG9sZSkKfQpgYGAKCk1lbnRhbCBoZWFsdGggZGF0YQpgYGB7cn0KbWggPC0gbGlzdChzbWhfbWg9c21oX21oLCBncmhfbWg9Z3JoX21oLCBjbWhfbWg9Y21oX21oKQpgYGAKCkludm9sdW50YXJ5IC0gRm9ybSAxIApgYGB7cn0KZGF0YSA8LSBnZXRfZGF0YShtaCwgJ0Zvcm0gMSBUb3RhbCcpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX291dCA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPWRhdGEsIGZhbWlseT0ncXVhc2lwb2lzc29uJykKc3VtbWFyeShwb2lzc29uX291dCkKYGBgCgpTdWJzdGFuY2UgcmVsYXRlZApgYGB7cn0KZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1N1YnN0YW5jZSByZWxhdGVkJykKCiMgUG9pc3NvbiByZWdyZXNzaW9uCnBvaXNzb25fb3V0IDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9ZGF0YSwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fb3V0KQpgYGAKCkFsY29ob2wgUmVsYXRlZApgYGB7cn0KZGF0YSA8LSBnZXRfZGF0YShtaCwgJ1N1YnN0YW5jZSByZWxhdGVkJywgJ0FsY29ob2wgKHNlcGFyYXRlKScpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX291dCA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPWRhdGEsIGZhbWlseT0ncXVhc2lwb2lzc29uJykKc3VtbWFyeShwb2lzc29uX291dCkKYGBgCgpNb29kIHJlbGF0ZWQKYGBge3J9CmRhdGEgPC0gZ2V0X2RhdGEobWgsICdNb29kIHJlbGF0ZWQnKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpCnN1bW1hcnkocG9pc3Nvbl9vdXQpCmBgYAoKUHN5Y2hvc2lzIHJlbGF0ZWQKYGBge3J9CmRhdGEgPC0gZ2V0X2RhdGEobWgsICdQc3ljaG9zaXMgcmVsYXRlZCcpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX291dCA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPWRhdGEsIGZhbWlseT0ncXVhc2lwb2lzc29uJykKc3VtbWFyeShwb2lzc29uX291dCkKYGBgCgpTaXR1YXRpb25hbCBjcmlzaXMKYGBge3J9CmRhdGEgPC0gZ2V0X2RhdGEobWgsICdTaXR1YXRpb25hbCBjcmlzaXMnKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpCnN1bW1hcnkocG9pc3Nvbl9vdXQpCmBgYAoKU2VsZiBoYXJtIHJlbGF0ZWQKYGBge3J9CmRhdGEgPC0gZ2V0X2RhdGEobWgsICdTZWxmIGhhcm0nKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9vdXQgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1kYXRhLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpCnN1bW1hcnkocG9pc3Nvbl9vdXQpCmBgYAo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ292aWQtMTkgTWVudGFsIEhlYWx0aCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgTG9hZCBwYWNrYWdlcwpgYGB7cn0KbGlicmFyeShwbHlyKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShyZWFkeGwpCmxpYnJhcnkodGliYmxldGltZSkKbGlicmFyeShsdWJyaWRhdGUpCmBgYAoKT2JzZXJ2YXRpb25hbCBwZXJpb2QgYmV0d2VlbiBNYXJjaCA1IGFuZCBTZXB0ZW1iZXIgNSwgMjAyMApgYGB7cn0KIyB2b2x1bWUgZGF0YQpjbWhfZWQgPC0gcmVhZF9leGNlbCgnZGF0YS9FRCBWb2x1bWUgQ2FtYnJpZGdlLnhsc3gnKQpncmhfZWQgPC0gcmVhZF9leGNlbCgnZGF0YS9FRCB2b2x1bWVzIEdSSC54bHN4JykKc21oX2VkIDwtIHJlYWRfZXhjZWwoJ2RhdGEvRUQgdm9sdW1lcyBTTUgueGxzeCcpCgojIG1lbnRhbCBoZWFsdGggZGF0YQpjbWhfbWggPC0gcmVhZF9leGNlbCgnZGF0YS9DT1ZJRC0xOSBkYXRhIHNoZWV0IGVkaXRlZCBKYW4gMjMueGxzeCcsIHNoZWV0PSdjbWgnKSAlPiUKICByZXBsYWNlKGlzLm5hKC4pLCAwKSAlPiUgCiAgcGl2b3RfbG9uZ2VyKGNvbHMgPSBgTWFyY2ggMSAtIE1hcmNoIDdgOmBBdWd1c3QgMzB0aCAtIFNlcHRlbWJlciA1dGhgLAogICAgICAgICAgICAgICBuYW1lc190bz0nd2VlaycsCiAgICAgICAgICAgICAgIHZhbHVlc190bz0nY291bnQnKQoKZ3JoX21oIDwtIHJlYWRfZXhjZWwoJ2RhdGEvQ09WSUQtMTkgZGF0YSBzaGVldCBlZGl0ZWQgSmFuIDIzLnhsc3gnLCBzaGVldD0nZ3JoJykgJT4lCiAgcmVwbGFjZShpcy5uYSguKSwgMCkgJT4lIAogIHBpdm90X2xvbmdlcihjb2xzID0gYE1hcmNoIDEgLSBNYXJjaCA3YDpgQXVndXN0IDMwdGggLSBTZXB0ZW1iZXIgNXRoYCwKICAgICAgICAgICAgICAgbmFtZXNfdG89J3dlZWsnLAogICAgICAgICAgICAgICB2YWx1ZXNfdG89J2NvdW50JykKCnNtaF9taCA8LSByZWFkX2V4Y2VsKCdkYXRhL0NPVklELTE5IGRhdGEgc2hlZXQgZWRpdGVkIEphbiAyMy54bHN4Jywgc2hlZXQ9J3NtaCcpICU+JQogIHJlcGxhY2UoaXMubmEoLiksIDApICU+JSAKICBwaXZvdF9sb25nZXIoY29scyA9IGBNYXJjaCAxIC0gTWFyY2ggN2A6YEF1Z3VzdCAzMHRoIC0gU2VwdGVtYmVyIDV0aGAsCiAgICAgICAgICAgICAgIG5hbWVzX3RvPSd3ZWVrJywKICAgICAgICAgICAgICAgdmFsdWVzX3RvPSdjb3VudCcpCgojIFBvbGljZSBkYXRhCnBvbCA8LSByZWFkX2V4Y2VsKCdkYXRhL0NPVklELTE5IGRhdGEgc2hlZXQgZWRpdGVkIEphbiAyMy54bHN4Jywgc2hlZXQ9J3BvbCcpICU+JQogIGZpbHRlcihTdWJ0eXBlIT0nRHJ1ZyBvdmVyZG9zZSAobW9udGhseSB0b3RhbHMpJyAmIFR5cGUhPSdFTVMgZGF0YScpICU+JSAKICBtdXRhdGUoYEp1bmUgMjEgLSBKdW5lIDI3YD1hcy5kb3VibGUoYEp1bmUgMjEgLSBKdW5lIDI3YCkpICU+JSAKICByZXBsYWNlKGlzLm5hKC4pLCAwKSAlPiUKICBwaXZvdF9sb25nZXIoY29scyA9IGBNYXJjaCAxIC0gTWFyY2ggN2A6YEF1Z3VzdCAzMHRoIC0gU2VwdGVtYmVyIDV0aGAsCiAgICAgICAgICAgICAgIG5hbWVzX3RvPSd3ZWVrJywKICAgICAgICAgICAgICAgdmFsdWVzX3RvPSdjb3VudCcpIApgYGAKCiMjIEZpZ3VyZSAxCkdldCB0b3RhbCB2b2x1bWUKYGBge3J9CnZvbCA8LSBzbWhfZWQgJT4lIGxlZnRfam9pbihncmhfZWQsIGJ5PWMoIkRhdGUgb2YgRUQgdmlzaXQgKHJlZykiID0gIkRheSBvZiBUcmlhZ2VfRFQiKSkgJT4lIAogIGxlZnRfam9pbihjbWhfZWQsIGJ5PWMoIkRhdGUgb2YgRUQgdmlzaXQgKHJlZykiID0gIlRyaWFnZSBEYXRlIikpICU+JSAKICByZW5hbWUoZGF0ZT1gRGF0ZSBvZiBFRCB2aXNpdCAocmVnKWAsIHNtaD1gIyBvZiBjYXNlc2AsIGdyaD1gTnVtYmVyIG9mIFJlY29yZHNgLCBjbWg9Vm9sdW1lKSAlPiUgCiAgbXV0YXRlKHRvdGFsPXNtaCtncmgrY21oKSAlPiUgCiAgbXV0YXRlKHllYXI9YXMuZmFjdG9yKHllYXIoZGF0ZSkpKQpgYGAKCkVEIHZpc2l0cyBkdXJpbmcgbG9ja2Rvd24gIApMaW5lIGdyYXBoCmBgYHtyfQpwIDwtIHZvbCAlPiUgZHJvcF9uYSgpICU+JSAKICBtdXRhdGUoZGF0ZSA9IGlmX2Vsc2UoeWVhcj09MjAxOSwgZGF0ZSt5ZWFycygxKSwgZGF0ZSkpICU+JQogIGdncGxvdChhZXMoeD1kYXRlLCB5PXRvdGFsLCBjb2xvcj15ZWFyKSkgKwogIGdlb21fbGluZSgpICsKICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzPWMoImdyZWVuIiwgImJsdWUiKSkgKwogIHlsYWIoJ2RhaWx5IEVEIHZpc2l0cycpICsKICBhbm5vdGF0ZSgncmVjdCcsIHhtaW49YXMuUE9TSVhjdCgnMjAyMC0wMy0xNycpLCB4bWF4PWFzLlBPU0lYY3QoJzIwMjAtMDUtMDQnKSwKICAgICAgICAgICB5bWluPS1JbmYsIHltYXg9SW5mLCBmaWxsPSdyZWQnLCBhbHBoYT0wLjMpCmdnc2F2ZSgnZ3JhcGhzL3ZvbC5wbmcnLCBwLCBoZWlnaHQgPSA4LjUsIHdpZHRoID0gMTEsIHVuaXRzID0gJ2luJykKcApgYGAKCkhpc3RvZ3JhbSAoZm9yIHBvdGVudGlhbCBBTk9WQSkKYGBge3J9CnZvbCAlPiUgbXV0YXRlKGRhdGU9YXMuRGF0ZShkYXRlKSkgJT4lIAogIGZpbHRlcihkYXRlPj0nMjAxOS0wMy0xNycgJiBkYXRlPD0nMjAyMC0wNS0wNCcpICU+JSAKICBmaWx0ZXIoZGF0ZTw9JzIwMTktMDUtMDQnIHwgZGF0ZT49JzIwMjAtMDMtMTcnKSAlPiUgCiAgZ2dwbG90KGFlcyh4PXRvdGFsLCBmaWxsPXllYXIpKSArCiAgZ2VvbV9oaXN0b2dyYW0oKQpgYGAKClBvaXNzb24gRUQgdmlzaXRzIGR1cmluZyBsb2NrZG93biAgCiAgCldlJ3JlIGxvb2tpbmcgYXQgdGhlIGRpZmZlcmVuY2UgaW4gb3V0Y29tZSAoaG9zcGl0YWxpemF0aW9ucykgYmFzZWQgb24gYXQgbGVhc3Qgb25lIHByZWRpY3RvciAoeWVhcikuIFRoYXQncyBnZW5lcmFsIGxpbmVhciBtb2RlbCB0ZXJyaXRvcnkuIElmIHlvdSBhcmUgc3VtbWFyaXppbmcgb3ZlciBzb21lIHBlcmlvZCAoZS5nLiwgdGhlIGF2ZXJhZ2UgYWNyb3NzIHRoZSBzaGFkZWQgYXJlYSksIHRoZW4gdGhlIGZvcm11bGF0aW9uIG9mIEdMTSB0aGF0IHdlIHJlZmVyIHRvIGFzIEFOT1ZBIGZvciBzaG9ydGhhbmQgd291bGQgcHJvYmFibHkgYmUgT0suIElmIHlvdSBhcmUgbm90IHN1bW1hcml6aW5nLCBhbmQgYXJlIHVzaW5nIHRoZSBpbmRpdmlkdWFsIGRhdGEgcG9pbnRzLCB0aGVuIHlvdSdsbCBiZSB2aW9sYXRpbmcgc29tZSBvZiB0aGUgYXNzdW1wdGlvbnMgb2YgR0xNIC0tIG91ciBvYnNlcnZhdGlvbnMgYXJlIG5vdCBpbmRlcGVuZGVudCwgYmVjYXVzZSB0aGUgcmF0ZSBvbiBPY3QgMiBpcyBtb3JlIHJlbGF0ZWQgdG8gdGhlIHJhdGUgb24gT2N0IDMgdGhhbiBpdCBpcyB0byBBcHJpbCAzIChmb3IgZXhhbXBsZSkuIEluIG90aGVyIHdvcmRzLCB0aGVzZSBhcmUgdGltZSBzZXJpZXMgZGF0YSwgd2hlcmUgdGhlcmUgaXMgYSB0cmVuZCBoYXBwZW5pbmcsIGFuZCB0byBpZ25vcmUgdGhhdCB3b3VsZCB2aW9sYXRlIHRoZSBhc3N1bXB0aW9uIG9mIChyZXNpZHVhbCkgaW5kZXBlbmRlbmNlLiAgCiAgClNlY29uZCwgd2UgbWlnaHQgYmUgdmlvbGF0aW5nIHRoZSBhc3N1bXB0aW9uIHRoYXQgb3VyIHJlc2lkdWFscyBhcmUgbm9ybWFsbHkgZGlzdHJpYnV0ZWQsIGJlY2F1c2Ugd2Uga25vdyB0aGlzIHR5cGUgb2YgZGF0YSAoY291bnRzKSBoYXMgYmVlbiBkcmF3biBmcm9tIHNvbWV0aGluZyBvdGhlciB0aGFuIGEgbm9ybWFsIGRpc3RyaWJ1dGlvbiwgYmVjYXVzZSBvbmx5IGludGVnZXJzIGFyZSBwb3NzaWJsZSBhbmQgdGhlIGNvdW50cyBhcmUgYm91bmRlZCBhdCB6ZXJvIChub3JtYWwgZGlzdHJpYnV0aW9uIGhhcyBsaW1pdHMgb2YgKy8tIGluZmluaXR5KS4gU28sIHdlIHNob3VsZCBiZSB0aGlua2luZyBhYm91dCBhbHRlcmluZyBvdXIgR0xNIHRvIGV4cGVjdCBhIGRpZmZlcmVudCBkaXN0cmlidXRpb24sIGxpa2UgUG9pc3Nvbi4gSG93ZXZlciwgaXQgdHVybnMgb3V0IHRoYXQgYmVjYXVzZSB0aGUgYmlnIHByb2JsZW0gd2l0aCBjb3VudCBkYXRhIGlzIHRoZSBib3VuZGFyeSBhdCB6ZXJvLCB3aGVuIG91ciBjb3VudHMgYXJlIGFsbCBmYXIgYXdheSBmcm9tIHplcm8sIHRoZSByZXN1bHRzIG9mIGEgbW9kZWwgd2hlcmUgd2UgYXNzdW1lIGEgbm9ybWFsIGRpc3RyaWJ1dGlvbiBhbmQgd2hlcmUgd2UgYXNzdW1lIGEgUG9pc3NvbiBkaXN0cmlidXRpb24gY29udmVyZ2UuIEluIHRoZSBub3JtYWwgZGlzdHJpYnV0aW9uLCB5b3UgZ2V0IGRlY2ltYWwgcG9pbnRzIGluIHlvdXIgZXN0aW1hdGUsIHdoaWNoIGRvbid0IHJlYWxseSBtYWtlIHNlbnNlIChjYW4ndCBoYXZlIGhhbGYgYW4gRVIgdmlzaXQpLCBidXQgdGhpcyBjYW4gZWFzaWx5IGJlIGlnbm9yZWQuIElmIHlvdSBjYW4gbGl2ZSB3aXRoIHRoYXQsIHRoZW4geW91IG1pZ2h0IGRvIHRoZSBBTk9WQS4gQnV0LCBpZiB5b3UgY2FuIHN0b21hY2ggaXQsIFBvaXNzb24gaXMgdGhlIG1vcmUgY29ycmVjdCB2ZXJzaW9uLiAgCiAgCkluIHN1bW1hcnksIGNhbid0IHVzZSBBTk9WQSBiZWNhdXNlIGl0IHZpb2xhdGVzIHR3byBhc3N1bXB0aW9uczogIAoxLiBUaGUgb2JzZXJ2YXRpb25zIGFyZSBub3QgaW5kZXBlbmRlbnQgIAoyLiBUaGUgcmVzaWR1YWxzIGFyZSBub3Qgbm9ybWFsbHkgZGlzdHJpYnV0ZWQgIAogIApXZSB1c2UgUG9pc3NvbiByZWdyZXNzaW9uIGJlY2F1c2U6ICAKMS4gSXQgY2FuIGhhbmRsZSBvYnNlcnZhdGlvbnMgdGhhdCBhcmUgbm90IGluZGVwZW5kZW50ICAKMi4gQ291bnRzIGFyZSBkcmF3biBmcm9tIHNvbWV0aGluZyBvdGhlciB0aGFuIGEgbm9ybWFsIGRpc3RyaWJ1dGlvbiwgaS5lLiBhIFBvaXNzb24gZGlzdHJpYnV0aW9uICAKICAKQmVmb3JlIHN0YXJ0aW5nIHRvIGludGVycHJldCByZXN1bHRzLCBsZXTigJlzIGNoZWNrIHdoZXRoZXIgdGhlIG1vZGVsIGhhcyBvdmVyLWRpc3BlcnNpb24gb3IgdW5kZXItZGlzcGVyc2lvbi4gSWYgdGhlIFJlc2lkdWFsIERldmlhbmNlIGlzIGdyZWF0ZXIgdGhhbiB0aGUgZGVncmVlcyBvZiBmcmVlZG9tLCB0aGVuIG92ZXItZGlzcGVyc2lvbiBleGlzdHMuIFRoaXMgbWVhbnMgdGhhdCB0aGUgZXN0aW1hdGVzIGFyZSBjb3JyZWN0LCBidXQgdGhlIHN0YW5kYXJkIGVycm9ycyAoc3RhbmRhcmQgZGV2aWF0aW9uKSBhcmUgd3JvbmcgYW5kIHVuYWNjb3VudGVkIGZvciBieSB0aGUgbW9kZWwuICAKICAKU28sIHRvIGhhdmUgYSBtb3JlIGNvcnJlY3Qgc3RhbmRhcmQgZXJyb3Igd2UgY2FuIHVzZSBhIHF1YXNpLXBvaXNzb24gbW9kZWw6CmBgYHtyfQp2b2x1bWUgPC0gdm9sICU+JSBtdXRhdGUoZGF0ZT1hcy5EYXRlKGRhdGUpKSAlPiUgCiAgZmlsdGVyKGRhdGU+PScyMDE5LTAzLTE3JyAmIGRhdGU8PScyMDIwLTA1LTA0JykgJT4lIAogIGZpbHRlcihkYXRlPD0nMjAxOS0wNS0wNCcgfCBkYXRlPj0nMjAyMC0wMy0xNycpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX3ZvbCA8LSBnbG0odG90YWwgfiB5ZWFyLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicsIGRhdGE9dm9sdW1lKQpmaWcxIDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fdm9sKSkpICU+JSAKICBzbGljZSgyKQp3cml0ZV9jc3YoZmlnMSwgJ3N0YXRfdGVzdHMvZmlnMS5jc3YnKQpzdW1tYXJ5KHBvaXNzb25fdm9sKQpgYGAKCiMjIEZpZ3VyZSAyCkxvY2tkb3duOiAzLzE3IC0gNS80CldlZWtzOiAKYGBge3J9CmdldF9kYXRhIDwtIGZ1bmN0aW9uKGRhdGEsIHR5cGUsIHN1YnR5cGU9TlVMTCkgewogIHdlZWtzIDwtIGMoJ01hcmNoIDE1IC0gTWFyY2ggMjEnLCAnTWFyIDIyIC0gTWFyIDI4JywgJ01hciAyOSAtIEFwciA0JywgJ0FwcmlsIDUgLSAxMScsICdBcHJpbCAxMiAtIDE4JywgJ0FwcmlsIDE5IC0gMjUnLCAnQXByaWwgMjYgLSBNYXkgMicpCiAgaWYgKGlzLm51bGwoc3VidHlwZSkpIHsKICAgIHNtaCA8LSBkYXRhJHNtaF9taCAlPiUKICAgICAgZmlsdGVyKHdlZWsgJWluJSB3ZWVrcykgJT4lIAogICAgICBmaWx0ZXIoVHlwZT09dHlwZSkgJT4lIAogICAgICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgCiAgICAgIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKSAlPiUgCiAgICAgIG11dGF0ZShkYXRlPXBhc3RlKHdlZWssIFllYXIsIHNlcD0nICcpKQogICAgZ3JoIDwtIGRhdGEkZ3JoX21oICU+JQogICAgICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgCiAgICAgIGZpbHRlcihUeXBlPT10eXBlKSAlPiUgCiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSAKICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSAKICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpCiAgICBjbWggPC0gZGF0YSRjbWhfbWggJT4lCiAgICAgIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSAKICAgICAgZmlsdGVyKFR5cGU9PXR5cGUpICU+JSAKICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIAogICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIAogICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSkKICB9IGVsc2UgewogICAgc21oIDwtIGRhdGEkc21oX21oICU+JQogICAgICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgCiAgICAgIGZpbHRlcihUeXBlPT10eXBlLCBTdWJ0eXBlPT1zdWJ0eXBlKSAlPiUgCiAgICAgIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSAKICAgICAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpICU+JSAKICAgICAgbXV0YXRlKGRhdGU9cGFzdGUod2VlaywgWWVhciwgc2VwPScgJykpCiAgICBncmggPC0gZGF0YSRncmhfbWggJT4lCiAgICAgIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSAKICAgICAgZmlsdGVyKFR5cGU9PXR5cGUsIFN1YnR5cGU9PXN1YnR5cGUpICU+JSAKICAgICAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIAogICAgICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkgJT4lIAogICAgICBtdXRhdGUoZGF0ZT1wYXN0ZSh3ZWVrLCBZZWFyLCBzZXA9JyAnKSkKICAgIGNtaCA8LSBkYXRhJGNtaF9taCAlPiUKICAgICAgZmlsdGVyKHdlZWsgJWluJSB3ZWVrcykgJT4lIAogICAgICBmaWx0ZXIoVHlwZT09dHlwZSwgU3VidHlwZT09c3VidHlwZSkgJT4lIAogICAgICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgCiAgICAgIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKSAlPiUgCiAgICAgIG11dGF0ZShkYXRlPXBhc3RlKHdlZWssIFllYXIsIHNlcD0nICcpKQogIH0KICB3aG9sZSA8LSBzbWggJT4lIAogICAgbGVmdF9qb2luKGdyaCwgYnk9J2RhdGUnKSAlPiUKICAgIGxlZnRfam9pbihjbWgsIGJ5PSdkYXRlJykgJT4lIAogICAgbXV0YXRlKHRvdGFsPWNvdW50K2NvdW50LngrY291bnQueSkgJT4lIAogICAgc2VsZWN0KFllYXIsIHdlZWssIHRvdGFsKSAlPiUgCiAgICBtdXRhdGUoWWVhcj1hcy5mYWN0b3IoWWVhcikpCiAgcmV0dXJuKHdob2xlKQp9CmBgYAoKTWVudGFsIGhlYWx0aCBkYXRhCmBgYHtyfQptaCA8LSBsaXN0KHNtaF9taD1zbWhfbWgsIGdyaF9taD1ncmhfbWgsIGNtaF9taD1jbWhfbWgpCmBgYAoKSW52b2x1bnRhcnkgLSBGb3JtIDEgCmBgYHtyfQppbnZvbHVudGFyeSA8LSBnZXRfZGF0YShtaCwgJ0Zvcm0gMSBUb3RhbCcpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX2ludiA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPWludm9sdW50YXJ5LCBmYW1pbHk9J3BvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25faW52KQpgYGAKClN1YnN0YW5jZSByZWxhdGVkCmBgYHtyfQpzdWJzdGFuY2UgPC0gZ2V0X2RhdGEobWgsICdTdWJzdGFuY2UgcmVsYXRlZCcpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX3N1YiA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPXN1YnN0YW5jZSwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fc3ViKQpgYGAKCkFsY29ob2wgUmVsYXRlZApgYGB7cn0KYWxjb2hvbCA8LSBnZXRfZGF0YShtaCwgJ1N1YnN0YW5jZSByZWxhdGVkJywgJ0FsY29ob2wgKHNlcGFyYXRlKScpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX2FsYyA8LSBnbG0odG90YWwgfiBZZWFyLCBkYXRhPWFsY29ob2wsIGZhbWlseT0ncXVhc2lwb2lzc29uJykKc3VtbWFyeShwb2lzc29uX2FsYykKYGBgCgpNb29kIHJlbGF0ZWQKYGBge3J9Cm1vb2QgPC0gZ2V0X2RhdGEobWgsICdNb29kIHJlbGF0ZWQnKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9tb29kIDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9bW9vZCwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fbW9vZCkKYGBgCgpQc3ljaG9zaXMgcmVsYXRlZApgYGB7cn0KcHN5Y2hvc2lzIDwtIGdldF9kYXRhKG1oLCAnUHN5Y2hvc2lzIHJlbGF0ZWQnKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9wc3kgPC0gZ2xtKHRvdGFsIH4gWWVhciwgZGF0YT1wc3ljaG9zaXMsIGZhbWlseT0ncXVhc2lwb2lzc29uJykKc3VtbWFyeShwb2lzc29uX3BzeSkKYGBgCgpTaXR1YXRpb25hbCBjcmlzaXMKYGBge3J9CnNpdHVhdGlvbmFsIDwtIGdldF9kYXRhKG1oLCAnU2l0dWF0aW9uYWwgY3Jpc2lzJykKCiMgUG9pc3NvbiByZWdyZXNzaW9uCnBvaXNzb25fc2l0IDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9c2l0dWF0aW9uYWwsIGZhbWlseT0ncG9pc3NvbicpCnN1bW1hcnkocG9pc3Nvbl9zaXQpCmBgYAoKU2VsZiBoYXJtIHJlbGF0ZWQKYGBge3J9Cmhhcm0gPC0gZ2V0X2RhdGEobWgsICdTZWxmIGhhcm0nKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9oYXJtIDwtIGdsbSh0b3RhbCB+IFllYXIsIGRhdGE9aGFybSwgZmFtaWx5PSdwb2lzc29uJykKc3VtbWFyeShwb2lzc29uX2hhcm0pCmBgYAoKYGBge3J9CmdldF9maWcyIDwtIGZ1bmN0aW9uKHBvaXNzb25fZmlnMikgewogIGludiA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9pbnYpKSkgJT4lIAogICAgc2xpY2UoMikgJT4lIAogICAgc2VsZWN0KHoudmFsdWUsIFByLi4uei4uKQogIHN1YiA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9zdWIpKSkgJT4lIAogICAgc2xpY2UoMikgJT4lIAogICAgc2VsZWN0KHQudmFsdWUsIFByLi4udC4uKQogIGFsYyA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9hbGMpKSkgJT4lIAogICAgc2xpY2UoMikgJT4lIAogICAgc2VsZWN0KHQudmFsdWUsIFByLi4udC4uKQogIG1vb2QgPC0gZGF0YS5mcmFtZShjb2VmKHN1bW1hcnkocG9pc3Nvbl9maWcyJHBvaXNzb25fbW9vZCkpKSAlPiUgCiAgICBzbGljZSgyKSAlPiUgCiAgICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pCiAgcHN5IDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fZmlnMiRwb2lzc29uX3BzeSkpKSAlPiUgCiAgICBzbGljZSgyKSAlPiUgCiAgICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pCiAgc2l0IDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fZmlnMiRwb2lzc29uX3NpdCkpKSAlPiUgCiAgICBzbGljZSgyKSAlPiUgCiAgICBzZWxlY3Qoei52YWx1ZSwgUHIuLi56Li4pCiAgaGFybSA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2ZpZzIkcG9pc3Nvbl9oYXJtKSkpICU+JSAKICAgIHNsaWNlKDIpICU+JSAKICAgIHNlbGVjdCh6LnZhbHVlLCBQci4uLnouLikKICAKICB0b3QgPC0gcmJpbmQuZmlsbChpbnYsIHN1YiwgYWxjLCBtb29kLCBwc3ksIHNpdCwgaGFybSkKICB0b3QkdHlwZSA8LSBjKCdJbnZvbHVudGFyeSAtIEZvcm0gMScsICdTdWJzdGFuY2UgcmVsYXRlZCcsICdBbGNvaG9sIHJlbGF0ZWQnLCAnTW9vZCByZWxhdGVkJywgJ1BzeWNob3NpcyByZWxhdGVkJywgJ1NpdHVhdGlvbmFsIGNyaXNpcycsICdTZWxmIGhhcm0gcmVsYXRlZCcpCiAgcmV0dXJuKHRvdCkKfQpgYGAKCmBgYHtyfQpwb2lzc29uX2ZpZzIgPC0gbGlzdChwb2lzc29uX2ludj1wb2lzc29uX2ludiwgcG9pc3Nvbl9zdWI9cG9pc3Nvbl9zdWIsIHBvaXNzb25fYWxjPXBvaXNzb25fYWxjLCBwb2lzc29uX21vb2Q9cG9pc3Nvbl9tb29kLCBwb2lzc29uX3BzeT1wb2lzc29uX3BzeSwgcG9pc3Nvbl9zaXQ9cG9pc3Nvbl9zaXQsIHBvaXNzb25faGFybT1wb2lzc29uX2hhcm0pCmBgYAoKYGBge3J9CmZpZzIgPC0gZ2V0X2ZpZzIocG9pc3Nvbl9maWcyKQp3cml0ZV9jc3YoZmlnMiwgJ3N0YXRfdGVzdHMvZmlnMi5jc3YnKQpgYGAKCiMjIEZpZ3VyZSAzCgpgYGB7cn0Kd2Vla3MgPC0gYygnTWFyY2ggMTUgLSBNYXJjaCAyMScsICdNYXIgMjIgLSBNYXIgMjgnLCAnTWFyIDI5IC0gQXByIDQnLCAnQXByaWwgNSAtIDExJywgJ0FwcmlsIDEyIC0gMTgnLCAnQXByaWwgMTkgLSAyNScsICdBcHJpbCAyNiAtIE1heSAyJykKYGBgCgpTdWljaWRlCmBgYHtyfQpzdWljaWRlIDwtIHBvbCAlPiUKICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgCiAgZmlsdGVyKFN1YnR5cGU9PSdTdWljaWRlIGF0dGVtcHQnKSAlPiUgCiAgZ3JvdXBfYnkoWWVhciwgd2VlaykgJT4lIAogIHN1bW1hcml6ZShjb3VudD1zdW0oY291bnQpKQoKIyBQb2lzc29uIHJlZ3Jlc3Npb24KcG9pc3Nvbl9zdWkgPC0gZ2xtKGNvdW50IH4gWWVhciwgZGF0YT1zdWljaWRlLCBmYW1pbHk9J3BvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fc3VpKQpgYGAKCkFsY29ob2wKYGBge3J9CnBvbF9hbGNvaG9sIDwtIHBvbCAlPiUKICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgCiAgZmlsdGVyKFN1YnR5cGU9PSdJbnRveGljYXRlZCcpICU+JSAKICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgCiAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX3BvbF9hbGMgPC0gZ2xtKGNvdW50IH4gWWVhciwgZGF0YT1wb2xfYWxjb2hvbCwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fcG9sX2FsYykKYGBgCgpBc3NhdWx0CmBgYHtyfQphc3NhdWx0IDwtIHBvbCAlPiUKICBmaWx0ZXIod2VlayAlaW4lIHdlZWtzKSAlPiUgCiAgZmlsdGVyKFN1YnR5cGU9PSdBc3NhdWx0JykgJT4lIAogIGdyb3VwX2J5KFllYXIsIHdlZWspICU+JSAKICBzdW1tYXJpemUoY291bnQ9c3VtKGNvdW50KSkKCiMgUG9pc3NvbiByZWdyZXNzaW9uCnBvaXNzb25fYXNzIDwtIGdsbShjb3VudCB+IFllYXIsIGRhdGE9YXNzYXVsdCwgZmFtaWx5PSdxdWFzaXBvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fYXNzKQpgYGAKCkRvbWVzdGljIGFidXNlCmBgYHtyfQpkb21lc3RpYyA8LSBwb2wgJT4lCiAgZmlsdGVyKHdlZWsgJWluJSB3ZWVrcykgJT4lIAogIGZpbHRlcihTdWJ0eXBlPT0nRG9tZXN0aWMgZGlzcHV0ZScpICU+JSAKICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgCiAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX2RvbSA8LSBnbG0oY291bnQgfiBZZWFyLCBkYXRhPWRvbWVzdGljLCBmYW1pbHk9J3F1YXNpcG9pc3NvbicpCnN1bW1hcnkocG9pc3Nvbl9kb20pCmBgYAoKQ3Jpc2lzIGNhbGxzCmBgYHtyfQpjcmlzaXMgPC0gcG9sICU+JQogIGZpbHRlcih3ZWVrICVpbiUgd2Vla3MpICU+JSAKICBmaWx0ZXIoU3VidHlwZT09J0NyaXNpcyBjYWxsIHZvbHVtZScpICU+JSAKICBncm91cF9ieShZZWFyLCB3ZWVrKSAlPiUgCiAgc3VtbWFyaXplKGNvdW50PXN1bShjb3VudCkpCgojIFBvaXNzb24gcmVncmVzc2lvbgpwb2lzc29uX2NyaSA8LSBnbG0oY291bnQgfiBZZWFyLCBkYXRhPWNyaXNpcywgZmFtaWx5PSdxdWFzaXBvaXNzb24nKQpzdW1tYXJ5KHBvaXNzb25fY3JpKQpgYGAKCmBgYHtyfQoKc3VpIDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fc3VpKSkpICU+JSAKICBzbGljZSgyKSAlPiUgCiAgc2VsZWN0KHoudmFsdWUsIFByLi4uei4uKQpwb2xfYWxjIDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fcG9sX2FsYykpKSAlPiUgCiAgc2xpY2UoMikgJT4lIAogIHNlbGVjdCh0LnZhbHVlLCBQci4uLnQuLikKYXNzIDwtIGRhdGEuZnJhbWUoY29lZihzdW1tYXJ5KHBvaXNzb25fYXNzKSkpICU+JSAKICBzbGljZSgyKSAlPiUgCiAgc2VsZWN0KHQudmFsdWUsIFByLi4udC4uKQpkb20gPC0gZGF0YS5mcmFtZShjb2VmKHN1bW1hcnkocG9pc3Nvbl9kb20pKSkgJT4lIAogIHNsaWNlKDIpICU+JSAKICBzZWxlY3QodC52YWx1ZSwgUHIuLi50Li4pCmNyaSA8LSBkYXRhLmZyYW1lKGNvZWYoc3VtbWFyeShwb2lzc29uX2NyaSkpKSAlPiUgCiAgc2xpY2UoMikgJT4lIAogIHNlbGVjdCh0LnZhbHVlLCBQci4uLnQuLikKCnRvdCA8LSByYmluZC5maWxsKHN1aSwgcG9sX2FsYywgYXNzLCBkb20sIGNyaSkKdG90JHR5cGUgPC0gYygnU3VpY2lkZScsICdBbGNvaG9sJywgJ0Fzc2F1bHQnLCAnRG9tZXN0aWMgRGlzcHV0ZXMnLCAnQ3Jpc2lzIGNhbGxzJykKCndyaXRlX2Nzdih0b3QsICdzdGF0X3Rlc3RzL2ZpZzMuY3N2JykKYGBgCgo=</div>
 
 
 

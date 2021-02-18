@@ -1,0 +1,2 @@
+"0","fig2 <- get_fig2(poisson_fig2)"
+"0","write_csv(fig2, 'stat_tests/fig2.csv')"
