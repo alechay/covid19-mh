@@ -1,7 +1,0 @@
-"0","vol %>% drop_na() %>% "
-"0","  mutate(date = if_else(year==2019, date+years(1), date)) %>%"
-"0","  ggplot(aes(x=date, y=total, color=year)) +"
-"0","  geom_line() +"
-"0","  scale_color_manual(values=c(""green"", ""blue"")) +"
-"0","  annotate('rect', xmin=as.POSIXct('2020-03-17'), xmax=as.POSIXct('2020-05-04'),"
-"0","           ymin=-Inf, ymax=Inf, fill='red', alpha=0.3)"
