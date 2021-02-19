@@ -1,0 +1,7 @@
+"0","min <- crisis$count[crisis$Year==2020 & crisis$week=='May 31 - June 6']"
+"0","max <- crisis$count[crisis$Year==2020 & crisis$week=='July 12 - July 18']"
+"0","(max-min)/min"
+"1","[1]"
+"1"," 0.4306358"
+"1","
+"

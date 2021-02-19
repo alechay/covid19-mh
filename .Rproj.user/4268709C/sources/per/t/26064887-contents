@@ -5,6 +5,7 @@ output: html_notebook
 
 ## Load packages
 ```{r}
+library(zoo) # moving averages
 library(plyr)
 library(tidyverse)
 library(readxl)
@@ -58,19 +59,43 @@ vol <- smh_ed %>% left_join(grh_ed, by=c("Date of ED visit (reg)" = "Day of Tria
   mutate(year=as.factor(year(date)))
 ```
 
+```{r}
+vol %>% 
+  group_by(year) %>% 
+  summarize(sum(total))
+```
+```{r}
+rbind(cmh_mh, grh_mh, smh_mh) %>% 
+  group_by(Year) %>% 
+  summarize(sum(count))
+```
+
 ED visits during lockdown  
 Line graph
 ```{r}
-p <- vol %>% drop_na() %>% 
-  mutate(date = if_else(year==2019, date+years(1), date)) %>%
-  ggplot(aes(x=date, y=total, color=year)) +
+vol <- vol %>% drop_na() %>% 
+  group_by(year) %>% 
+  mutate(roll = rollmean(total, k = 7, fill = NA)) %>% 
+  mutate(date = if_else(year==2019, date+years(1), date))
+p <- ggplot(vol, aes(x=date, y=total, color=year)) +
   geom_line() +
+  geom_line(aes(x=date, y=roll)) +
   scale_color_manual(values=c("green", "blue")) +
   ylab('daily ED visits') +
   annotate('rect', xmin=as.POSIXct('2020-03-17'), xmax=as.POSIXct('2020-05-04'),
            ymin=-Inf, ymax=Inf, fill='red', alpha=0.3)
 ggsave('graphs/vol.png', p, height = 8.5, width = 11, units = 'in')
 p
+```
+
+```{r}
+v2020 <- vol %>% 
+  filter(year==2020)
+max <- max(v2020$roll, na.rm = TRUE)
+v2020$date[v2020$roll==max(v2020$roll, na.rm = TRUE)]
+min <- min(v2020$roll, na.rm = TRUE)
+v2020$date[v2020$roll==min(v2020$roll, na.rm = TRUE)]
+(max-min)/max
 ```
 
 Histogram (for potential ANOVA)
@@ -107,7 +132,8 @@ volume <- vol %>% mutate(date=as.Date(date)) %>%
 # Poisson regression
 poisson_vol <- glm(total ~ year, family='quasipoisson', data=volume)
 fig1 <- data.frame(coef(summary(poisson_vol))) %>% 
-  slice(2)
+  slice(2) %>% 
+  rename(`p-val(t)`=Pr...t..)
 write_csv(fig1, 'stat_tests/fig1.csv')
 summary(poisson_vol)
 ```
@@ -117,7 +143,7 @@ Lockdown: 3/17 - 5/4
 Weeks: 
 ```{r}
 get_data <- function(data, type, subtype=NULL) {
-  weeks <- c('March 15 - March 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'April 5 - 11', 'April 12 - 18', 'April 19 - 25', 'April 26 - May 2')
+  weeks <- c('March 15 - March 21\r\n\r\n', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'April 5 - 11', 'April 12 - 18', 'April 19 - 25', 'April 26 - May 2')
   if (is.null(subtype)) {
     smh <- data$smh_mh %>%
       filter(week %in% weeks) %>% 
@@ -183,7 +209,7 @@ summary(poisson_inv)
 
 Substance related
 ```{r}
-substance <- get_data(mh, 'Substance related')
+substance <- get_data(mh, 'Substance related', 'Substance misuse/abuse')
 
 # Poisson regression
 poisson_sub <- glm(total ~ Year, data=substance, family='quasipoisson')
@@ -261,6 +287,8 @@ get_fig2 <- function(poisson_fig2) {
   
   tot <- rbind.fill(inv, sub, alc, mood, psy, sit, harm)
   tot$type <- c('Involuntary - Form 1', 'Substance related', 'Alcohol related', 'Mood related', 'Psychosis related', 'Situational crisis', 'Self harm related')
+  tot <- tot %>% 
+    rename(`p-val(z)`=Pr...z.., `p-val(t)`=Pr...t..)
   return(tot)
 }
 ```
@@ -277,7 +305,7 @@ write_csv(fig2, 'stat_tests/fig2.csv')
 ## Figure 3
 
 ```{r}
-weeks <- c('March 15 - March 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'April 5 - 11', 'April 12 - 18', 'April 19 - 25', 'April 26 - May 2')
+weeks <- c('March 15 - March 21\r\n\r\n', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'April 5 - 11', 'April 12 - 18', 'April 19 - 25', 'April 26 - May 2')
 ```
 
 Suicide
@@ -365,7 +393,45 @@ cri <- data.frame(coef(summary(poisson_cri))) %>%
 
 tot <- rbind.fill(sui, pol_alc, ass, dom, cri)
 tot$type <- c('Suicide', 'Alcohol', 'Assault', 'Domestic Disputes', 'Crisis calls')
+tot <- tot %>% 
+  rename(`p-val(z)`=Pr...z.., `p-val(t)`=Pr...t..)
 
 write_csv(tot, 'stat_tests/fig3.csv')
+```
+
+```{r}
+week_order <- unique(pol$week)
+
+crisis <- pol %>%
+  filter(Subtype=='Crisis call volume') %>% 
+  group_by(Year, week) %>% 
+  summarize(count=sum(count)) %>% 
+  mutate(Year=as.factor(Year)) %>% 
+  mutate(week=factor(week, levels=week_order))
+```
+
+```{r}
+p <- ggplot(crisis, aes(x=week, y=count, group=Year)) +
+  geom_point(aes(color=Year)) +
+  geom_line(aes(color=Year)) +
+  theme(axis.text.x = element_text(angle =90, hjust = 1))
+
+p
+# library(segmented)
+# data <- crisis %>% 
+#   filter(Year==2020)
+# my.lm <- lm(count ~ week, data = data)
+# my.seg <- segmented(my.lm, seg.Z = ~ week)
+# my.fitted <- fitted(my.seg)
+# my.model <- data.frame(week = data$week, count = my.fitted) %>% 
+#   mutate(week=factor(week, levels=week_order)) %>% 
+#   mutate(Year=rep(2020, times=27))
+# p + geom_line(my.model, mapping=aes(x=week, y=count))
+```
+
+```{r}
+min <- crisis$count[crisis$Year==2020 & crisis$week=='May 31 - June 6']
+max <- crisis$count[crisis$Year==2020 & crisis$week=='July 12 - July 18']
+(max-min)/min
 ```
 

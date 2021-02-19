@@ -1,0 +1,10 @@
+"0","week_order <- unique(pol$week)"
+"0",""
+"0","crisis <- pol %>%"
+"0","  filter(Subtype=='Crisis call volume') %>% "
+"0","  group_by(Year, week) %>% "
+"0","  summarize(count=sum(count)) %>% "
+"0","  mutate(Year=as.factor(Year)) %>% "
+"0","  mutate(week=factor(week, levels=week_order))"
+"2","`summarise()` regrouping output by 'Year' (override with `.groups` argument)
+"
