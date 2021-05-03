@@ -1,0 +1,187 @@
+---
+title: "1- Data"
+output: html_notebook
+---
+
+## Load packages
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+```{r}
+# mental health data
+cmh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='cmh') %>%
+  replace(is.na(.), 0) %>% 
+  pivot_longer(cols = `Mar 1 - Mar 7`:`Aug 30 - Sep 5`,
+               names_to='week',
+               values_to='count')
+
+grh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='grh') %>%
+  replace(is.na(.), 0) %>% 
+  pivot_longer(cols = `Mar 1 - Mar 7`:`Aug 30 - Sep 5`,
+               names_to='week',
+               values_to='count')
+
+smh_mh <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='smh') %>%
+  replace(is.na(.), 0) %>% 
+  pivot_longer(cols = `Mar 1 - Mar 7`:`Aug 30 - Sep 5`,
+               names_to='week',
+               values_to='count')
+
+# Police data
+pol <- read_excel('data/COVID-19 data sheet edited Jan 23.xlsx', sheet='pol') %>%
+  filter(Subtype!='Drug overdose (monthly totals)' & Type!='EMS data') %>% 
+  mutate(`June 21 - June 27`=as.double(`June 21 - June 27`)) %>% 
+  replace(is.na(.), 0) %>%
+  pivot_longer(cols = `Mar 1 - Mar 7`:`Aug 30 - Sep 5`,
+               names_to='week',
+               values_to='count') 
+```
+
+## Function
+Get data during lockdown. We restricted the data to March 17- May 4 because we wanted to compare the 2020 lockdown period to the same period in 2019.  
+```{r}
+get_data <- function(data, type, subtype=NULL) {
+  
+  weeks <- c('Mar 1 - Mar 7', 'Mar 8 - Mar 14', 'Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2', 'May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6', 'June 7 - June 13', 'June 14 - June 20', 'June 21 - June 27', 'June 28 - July 4', 'July 5 - July 11', 'July 12 - July 18', 'July 19 - July 25', 'July 26 -  Aug 1', 'Aug 2 - Aug 8', 'Aug 9 - Aug 15', 'Aug 16 - Aug 22', 'Aug 23 - Aug 29', 'Aug 30 - Sep 5')
+  
+  if (is.null(subtype)) {
+    smh <- data$smh_mh %>%
+      filter(week %in% weeks) %>% 
+      filter(Type==type) %>% 
+      group_by(Year, week) %>% 
+      summarize(count=sum(count)) %>% 
+      mutate(date=paste(week, Year, sep=' '))
+    grh <- data$grh_mh %>%
+      filter(week %in% weeks) %>% 
+      filter(Type==type) %>% 
+      group_by(Year, week) %>% 
+      summarize(count=sum(count)) %>% 
+      mutate(date=paste(week, Year, sep=' '))
+    cmh <- data$cmh_mh %>%
+      filter(week %in% weeks) %>% 
+      filter(Type==type) %>% 
+      group_by(Year, week) %>% 
+      summarize(count=sum(count)) %>% 
+      mutate(date=paste(week, Year, sep=' '))
+  } else {
+    smh <- data$smh_mh %>%
+      filter(week %in% weeks) %>% 
+      filter(Type==type, Subtype==subtype) %>% 
+      group_by(Year, week) %>% 
+      summarize(count=sum(count)) %>% 
+      mutate(date=paste(week, Year, sep=' '))
+    grh <- data$grh_mh %>%
+      filter(week %in% weeks) %>% 
+      filter(Type==type, Subtype==subtype) %>% 
+      group_by(Year, week) %>% 
+      summarize(count=sum(count)) %>% 
+      mutate(date=paste(week, Year, sep=' '))
+    cmh <- data$cmh_mh %>%
+      filter(week %in% weeks) %>% 
+      filter(Type==type, Subtype==subtype) %>% 
+      group_by(Year, week) %>% 
+      summarize(count=sum(count)) %>% 
+      mutate(date=paste(week, Year, sep=' '))
+  }
+  
+  mh_type <- paste(type, subtype, sep=', ')
+  
+  whole <- smh %>% 
+    left_join(grh, by='date') %>%
+    left_join(cmh, by='date') %>% 
+    mutate(total=count+count.x+count.y) %>% 
+    select(Year, week, total) %>% 
+    mutate(type=rep(mh_type, times=nrow(smh))) %>% 
+    mutate(type = case_when(type == 'Form 1 Total, ' ~ 'Involuntary Form 1',
+                            type == 'Substance related, Substance misuse/abuse' ~ 'Substance related',
+                            type == 'Substance related, Alcohol (separate)' ~ 'Alcohol related',
+                            type == 'Mood related, ' ~ 'Mood related',
+                            type == 'Psychosis related, ' ~ 'Psychosis related',
+                            type == 'Situational crisis, ' ~ 'Situational crisis',
+                            type == 'Self harm, ' ~ 'Self harm related')) %>% 
+    mutate(Year=as.factor(Year)) %>% 
+    mutate(week=factor(week, levels=weeks))
+  return(whole)
+}
+```
+
+Mental health data
+```{r}
+mh <- list(smh_mh=smh_mh, grh_mh=grh_mh, cmh_mh=cmh_mh)
+
+involuntary <- get_data(mh, 'Form 1 Total')
+substance <- get_data(mh, 'Substance related', 'Substance misuse/abuse')
+alcohol <- get_data(mh, 'Substance related', 'Alcohol (separate)')
+mood <- get_data(mh, 'Mood related')
+psychosis <- get_data(mh, 'Psychosis related')
+situational <- get_data(mh, 'Situational crisis')
+harm <- get_data(mh, 'Self harm')
+
+lockdown <- c('Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2')
+green <- c('May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6')
+mh <- rbind(involuntary, substance, alcohol, mood, psychosis, situational, harm)
+mh <- mh %>% 
+  mutate(Restrictions=case_when(week %in% lockdown ~ 'Lockdown',
+                                week %in% green ~ 'Easing restrictions',
+                                TRUE ~ 'Minimal restrictions'))
+
+mh_csv <- mh %>% 
+  pivot_wider(names_from = type, values_from = total) %>% 
+  mutate(Total = rowSums(across(where(is.numeric)))) %>% 
+  arrange(Year, week)
+write_csv(mh_csv, 'data/mh_counts.csv')
+```
+
+Police
+```{r}
+weeks <- c('Mar 1 - Mar 7', 'Mar 8 - Mar 14', 'Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2', 'May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6', 'June 7 - June 13', 'June 14 - June 20', 'June 21 - June 27', 'June 28 - July 4', 'July 5 - July 11', 'July 12 - July 18', 'July 19 - July 25', 'July 26 -  Aug 1', 'Aug 2 - Aug 8', 'Aug 9 - Aug 15', 'Aug 16 - Aug 22', 'Aug 23 - Aug 29', 'Aug 30 - Sep 5')
+
+suicide <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Suicide attempt') %>% 
+  mutate(type=rep('Suicide attempt', times=2*length(weeks))) %>% 
+  group_by(type, Year, week) %>% 
+  summarize(count=sum(count))
+pol_alcohol <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Intoxicated') %>%
+  mutate(type=rep('Intoxication', times=2*length(weeks))) %>% 
+  group_by(type, Year, week) %>% 
+  summarize(count=sum(count))
+assault <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Assault') %>%
+  mutate(type=rep('Assault', times=2*length(weeks))) %>% 
+  group_by(type, Year, week) %>% 
+  summarize(count=sum(count))
+domestic <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Domestic dispute') %>% 
+  mutate(type=rep('Domestic dispute', times=2*length(weeks))) %>% 
+  group_by(type, Year, week) %>% 
+  summarize(count=sum(count))
+crisis <- pol %>%
+  filter(week %in% weeks) %>% 
+  filter(Subtype=='Crisis call volume') %>% 
+  mutate(type=rep('Crisis calls', times=2*length(weeks))) %>% 
+  group_by(type, Year, week) %>% 
+  summarize(count=sum(count))
+
+lockdown <- c('Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2')
+green <- c('May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6')
+pol_long <- rbind(suicide, pol_alcohol, assault, domestic, crisis)
+pol_long <- pol_long %>% 
+  mutate(Restrictions=case_when(week %in% lockdown ~ 'Lockdown',
+                                week %in% green ~ 'Easing restrictions',
+                                TRUE ~ 'Minimal restrictions'))
+
+pol_csv <- pol_long %>% 
+  mutate(Year = factor(Year, levels=c(2019, 2020))) %>% 
+  mutate(week = factor(week, levels=weeks)) %>% 
+  pivot_wider(names_from = type, values_from = count) %>% 
+  mutate(Total = rowSums(across(where(is.numeric)))) %>% 
+  arrange(Year, week)
+write.csv(pol_csv, 'data/pol_counts.csv')
+```

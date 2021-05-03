@@ -1,0 +1,19 @@
+1. Monthly crude numbers for all diagnoses should be placed in a Table ((3 columns with p-values)
+
+2. References for Poisson regression and details on whether univariate/multivariate.
+
+3. Context for t, a, z values.
+
+4. Why not a negative binomial regression? Quasi- Poisson is an unusual term to me. How is this different statistically from a Poisson regression or a negative binomial (in order to correct for the overdispersion)? Or are you just comparing the number of visits for each “code” over the entire time period in 2019 vs. 2020 (in which case I am not sure a Poisson regression is actually what you would want to use for your analysis).
+
+5. Table 1. this comes back to the statistical analysis (in that the description is not sufficient for an outside reader to understand what you have done). Were case counts for each “condition” examined individually such that these are individual univariate models with a year term? What is the predictor? Year? Month and Year? Coefficients? standard error? 95% Confidence interval? Did you need to log transform the count data? Should this maybe be zero inflated? Do you have many days with zero counts?
+
+6. You appear to have further restricted the time periods for different types of analyses (e. g. March 17-May 4 which is only a subset of your total dataset). Again, it seems like a flow chart/figure would be helpful to show how many visits you had in that period etc. as well as some clarification/justification about why different time points were selected. (Note: I believe this is because we selected only the lockdown period in order to compare – please confirm)
+
+7. The description of Figure 1 in the first paragraph described weeks between 3/5 and 9/5 2020 and figure 2 is purported to report the mental health diagnostic categories for the same period. But the tables that are reporting the various categories represent data from 3/17-5/4 2020 only. Why the reduction in the window of observation for the Poisson regression comparisons. (Note: I believe this is because we selected only the lockdown period in order to compare – please confirm)
+
+8. This was time-series data; in my opinion, the research question could be better answered by a Changepoint analysis using the PELT method. A LOWESS analysis could be done to get a clearer visual trend
+
+9. The authors did not examine and comment upon the "recovery" of mental health-related service in May-June 2020. A CPA can actually test this change statistically. And consequently, I urge the authors to comment on this in the discussions as well.
+
+10. One reviewer asks for an explanation for increase in crisis calls in June and July, seen in Figure 3. This appears to be well above 2019, and I’m not sure if there’s a way to statistically analyze this trend.

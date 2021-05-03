@@ -1,0 +1,55 @@
+"","Year","week","Restrictions","Suicide attempt","Intoxication","Assault","Domestic dispute","Crisis calls","Total"
+"1","2019","Mar 1 - Mar 7","Minimal restrictions",40,23,34,103,1237,1437
+"2","2019","Mar 8 - Mar 14","Minimal restrictions",41,23,34,104,1278,1480
+"3","2019","Mar 15 - Mar 21","Lockdown",93,30,38,135,1271,1567
+"4","2019","Mar 22 - Mar 28","Lockdown",46,30,38,135,1249,1498
+"5","2019","Mar 29 - Apr 4","Lockdown",47,0,0,0,1250,1297
+"6","2019","Apr 5 - Apr 11","Lockdown",48,19,23,107,1235,1432
+"7","2019","Apr 12 - Apr 18","Lockdown",49,20,30,135,1041,1275
+"8","2019","Apr 19 - Apr 25","Lockdown",39,14,34,113,1279,1479
+"9","2019","Apr 26 - May 2","Lockdown",59,19,26,121,1145,1370
+"10","2019","May 3 - May 9","Easing restrictions",40,20,47,114,1177,1398
+"11","2019","May 10 - May 16","Easing restrictions",53,20,17,128,1099,1317
+"12","2019","May 17 - May 23","Easing restrictions",32,22,29,139,1192,1414
+"13","2019","May 24 - May 30","Easing restrictions",37,24,38,108,1194,1401
+"14","2019","May 31 - June 6","Easing restrictions",54,36,31,124,1145,1390
+"15","2019","June 7 - June 13","Minimal restrictions",40,20,47,120,1088,1315
+"16","2019","June 14 - June 20","Minimal restrictions",63,18,44,140,1080,1345
+"17","2019","June 21 - June 27","Minimal restrictions",49,25,36,132,1165,1407
+"18","2019","June 28 - July 4","Minimal restrictions",46,31,32,153,1038,1300
+"19","2019","July 5 - July 11","Minimal restrictions",52,24,33,142,1109,1360
+"20","2019","July 12 - July 18","Minimal restrictions",52,25,33,143,789,1042
+"21","2019","July 19 - July 25","Minimal restrictions",38,20,30,123,1026,1237
+"22","2019","July 26 -  Aug 1","Minimal restrictions",42,17,29,120,1061,1269
+"23","2019","Aug 2 - Aug 8","Minimal restrictions",37,29,31,119,1055,1271
+"24","2019","Aug 9 - Aug 15","Minimal restrictions",37,19,24,138,1036,1254
+"25","2019","Aug 16 - Aug 22","Minimal restrictions",40,16,28,120,1070,1274
+"26","2019","Aug 23 - Aug 29","Minimal restrictions",38,34,22,150,961,1205
+"27","2019","Aug 30 - Sep 5","Minimal restrictions",36,27,36,143,984,1226
+"28","2020","Mar 1 - Mar 7","Minimal restrictions",43,12,40,135,1165,1395
+"29","2020","Mar 8 - Mar 14","Minimal restrictions",46,10,31,136,1177,1400
+"30","2020","Mar 15 - Mar 21","Lockdown",35,18,28,137,1144,1362
+"31","2020","Mar 22 - Mar 28","Lockdown",45,7,11,131,1037,1231
+"32","2020","Mar 29 - Apr 4","Lockdown",30,18,20,111,1068,1247
+"33","2020","Apr 5 - Apr 11","Lockdown",33,7,17,143,1026,1226
+"34","2020","Apr 12 - Apr 18","Lockdown",28,5,20,120,1043,1216
+"35","2020","Apr 19 - Apr 25","Lockdown",31,16,20,143,1006,1216
+"36","2020","Apr 26 - May 2","Lockdown",29,14,25,131,955,1154
+"37","2020","May 3 - May 9","Easing restrictions",30,5,31,112,1122,1300
+"38","2020","May 10 - May 16","Easing restrictions",39,11,15,128,1018,1211
+"39","2020","May 17 - May 23","Easing restrictions",34,12,27,127,1032,1232
+"40","2020","May 24 - May 30","Easing restrictions",31,11,30,124,991,1187
+"41","2020","May 31 - June 6","Easing restrictions",42,22,34,112,1038,1248
+"42","2020","June 7 - June 13","Minimal restrictions",45,9,22,141,1308,1525
+"43","2020","June 14 - June 20","Minimal restrictions",33,9,31,126,1334,1533
+"44","2020","June 21 - June 27","Minimal restrictions",45,14,28,132,1417,1636
+"45","2020","June 28 - July 4","Minimal restrictions",42,17,23,133,1424,1639
+"46","2020","July 5 - July 11","Minimal restrictions",44,9,33,142,1442,1670
+"47","2020","July 12 - July 18","Minimal restrictions",49,13,45,132,1485,1724
+"48","2020","July 19 - July 25","Minimal restrictions",38,8,35,116,911,1108
+"49","2020","July 26 -  Aug 1","Minimal restrictions",45,13,36,118,1328,1540
+"50","2020","Aug 2 - Aug 8","Minimal restrictions",47,9,29,150,1309,1544
+"51","2020","Aug 9 - Aug 15","Minimal restrictions",38,19,43,142,1381,1623
+"52","2020","Aug 16 - Aug 22","Minimal restrictions",36,12,29,136,1435,1648
+"53","2020","Aug 23 - Aug 29","Minimal restrictions",37,15,23,137,1403,1615
+"54","2020","Aug 30 - Sep 5","Minimal restrictions",36,19,40,130,1345,1570

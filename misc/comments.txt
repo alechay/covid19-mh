@@ -1,0 +1,19 @@
+1. Crude numbers are included in the supplementary materials.
+
+2. Quasi-Poisson regression is commonly used to model over-dispersed count data (Hoef 2007, https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1141&context=usdeptcommercepub). For each category, we used a univariate Quasi-poisson regression with a log link function and year as the only predictor.
+
+3. We modified the tables. Regression coefficients are the estimated slope of the model. Other values should be self-explanatory.
+
+4. Quasi-Poisson and negative binomial regression models have equal numbers of parameters, and either could be used for overdispersed count data. The variance of a quasi-Poisson model is a linear function of the mean while the variance of a negative binomial model is a quadratic function of the mean. These variance relationships affect the weights in the iteratively weighted least-squares algorithm of fitting models to data. Because the variance is a function of the mean, large and small counts get weighted differently in quasi-Poisson and negative binomial regression (Hoef 2007, https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1141&context=usdeptcommercepub). We used quasi-poisson because the negative binomial models were sometimes not able to converge on a model fit. For each “code”, we used a univariate Quasi-poisson regression with a log link function and year as the only predictor.
+
+5. For each “condition”, we used a univariate Quasi-poisson regression with a log link function and year as the only predictor. Coefficients and standard error are now included in the table. Log link function means the data is log transformed when modeled. The data is not zero-inflated; the raw counts are now included in the supplementary materials. 
+
+6. Emergency department visits, mental health diagnoses, and police responses during the 2020 lockdown (March 17 to May 4) were compared to ED visits, mental health diagnoses, and police responses over the same period in 2019. These timepoints were selected in order to compare the period of lockdown to a baseline level. 
+
+7. Figures 1 and 2 show counts from March 5 to September 5. We ran the models on the lockdown period, which is shaded in red. Tables 1 and 2 show the results of those models. This should be better explained now in the results. These timepoints were selected in order to compare the period of lockdown to a baseline level. 
+
+8. We have now included a change point analysis, as you have described.
+
+9. We have now included a change point analysis, as you have described.
+
+10. The change point analysis detects the increase in police responses in June/July, which is largely driven by the change in crisis calls. I’m not sure what to make of this.

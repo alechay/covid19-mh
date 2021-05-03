@@ -1,5 +1,0 @@
-"0","rbind(cmh_mh, grh_mh, smh_mh) %>% "
-"0","  group_by(Year) %>% "
-"0","  summarize(sum(count))"
-"2","`summarise()` ungrouping output (override with `.groups` argument)
-"

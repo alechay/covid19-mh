@@ -1,6 +1,0 @@
-"0","p <- ggplot(crisis, aes(x=week, y=count, group=Year)) +"
-"0","  geom_point(aes(color=Year)) +"
-"0","  geom_line(aes(color=Year)) +"
-"0","  theme(axis.text.x = element_text(angle =90, hjust = 1))"
-"0",""
-"0","p"

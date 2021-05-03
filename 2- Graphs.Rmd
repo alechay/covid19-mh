@@ -1,0 +1,142 @@
+---
+title: "2- Graphs"
+output: html_notebook
+---
+
+## Load packages
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+```{r}
+weeks <- c('Mar 1 - Mar 7', 'Mar 8 - Mar 14', 'Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2', 'May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6', 'June 7 - June 13', 'June 14 - June 20', 'June 21 - June 27', 'June 28 - July 4', 'July 5 - July 11', 'July 12 - July 18', 'July 19 - July 25', 'July 26 -  Aug 1', 'Aug 2 - Aug 8', 'Aug 9 - Aug 15', 'Aug 16 - Aug 22', 'Aug 23 - Aug 29', 'Aug 30 - Sep 5')
+
+mh <- read_csv('data/mh_counts.csv') %>% 
+  pivot_longer(cols=`Involuntary Form 1`:`Total`, 
+               names_to='Type',
+               values_to='Count') %>% 
+  mutate(Year=factor(Year)) %>% 
+  mutate(week=factor(week, levels=weeks))
+pol <- read_csv('data/pol_counts.csv') %>% 
+  pivot_longer(cols=`Suicide attempt`:`Total`, 
+               names_to='Type',
+               values_to='Count') %>% 
+  mutate(Year=factor(Year)) %>% 
+  mutate(week=factor(week, levels=weeks))
+
+# volume data
+cmh_ed <- read_excel('data/ED Volume Cambridge.xlsx')
+grh_ed <- read_excel('data/ED volumes GRH.xlsx')
+smh_ed <- read_excel('data/ED volumes SMH.xlsx')
+
+# covid data
+cov <- read_csv('data/conposcovidloc.csv') %>% 
+  select(Case_Reported_Date, Reporting_PHU) %>% 
+  filter(Reporting_PHU == 'Region of Waterloo, Public Health') %>% 
+  filter(Case_Reported_Date <= as.Date('2020-09-05')) %>% 
+  group_by(Case_Reported_Date) %>% 
+  count()
+
+timeline <- data.frame(Restrictions=c('Lockdown', 'Easing restrictions'),
+                       Date_start=c('Mar 15 - Mar 21', 'Apr 26 - May 2'),
+                       Date_end=c('Apr 26 - May 2', 'May 31 - June 6'))
+
+timeline1 <- data.frame(Restrictions=c('Lockdown', 'Easing restrictions'),
+                       Date_start=as.Date(c('2020-03-17', '2020-05-04')),
+                       Date_end=as.Date(c('2020-05-04', '2020-06-02')))
+```
+
+```{r}
+fill <- c('Lockdown'='red', 'Easing restrictions'='green')
+```
+
+Mental health
+```{r}
+p <- ggplot() +
+  geom_line(mh,
+            mapping = aes(x=week, y=Count, group=Year, color=Year)) +
+  geom_rect(timeline,
+            mapping=aes(xmin=Date_start, xmax=Date_end, fill=Restrictions),
+            ymin=-Inf, ymax=Inf, alpha=0.3) +
+  scale_fill_manual(values=fill) +
+  facet_wrap(vars(Type), nrow=4, scales="free_y") +
+  xlab('Week') +
+  ylab('Count') +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust=1))
+p
+ggsave('graphs/mh_counts.png', p, height = 11, width = 8.5, units = 'in')
+```
+
+Police
+```{r}
+p <- ggplot() +
+  geom_line(pol,
+            mapping = aes(x=week, y=Count, group=Year, color=Year)) +
+  geom_rect(timeline,
+            mapping=aes(xmin=Date_start, xmax=Date_end, fill=Restrictions),
+            ymin=-Inf, ymax=Inf, alpha=0.3) +
+  scale_fill_manual(values=fill) +
+  facet_wrap(vars(Type), nrow=4, scales="free_y") +
+  xlab('Week') +
+  ylab('Count') +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust=1))
+p
+ggsave('graphs/pol_counts.png', p, height = 11, width = 8.5, units = 'in')
+```
+
+```{r}
+vol <- smh_ed %>% 
+  left_join(grh_ed, by=c("Date of ED visit (reg)" = "Day of Triage_DT")) %>%
+  left_join(cmh_ed, by=c("Date of ED visit (reg)" = "Triage Date")) %>% 
+  rename(date=`Date of ED visit (reg)`, smh=`# of cases`, grh=`Number of Records`, cmh=Volume) %>% 
+  mutate(total=smh+grh+cmh) %>% 
+  mutate(Year=as.factor(lubridate::year(date)))
+
+vol <- vol %>% 
+  drop_na() %>% 
+  group_by(Year) %>% 
+  mutate(date = if_else(Year==2019, date+lubridate::years(1), date)) %>% 
+  mutate(date = as.Date(date))
+
+vol_plot <- ggplot() +
+  geom_line(vol, 
+            mapping = aes(x=date, y=total, color=Year)) +
+  geom_smooth(vol,
+              mapping=aes(x=date, y=total, color=Year)) +
+  geom_rect(timeline1,
+            mapping=aes(xmin=Date_start, xmax=Date_end, fill=Restrictions),
+            ymin=-Inf, ymax=Inf, alpha=0.3) +
+  ylab('Daily ED visits') +
+  scale_x_date(date_breaks = "1 month", date_labels = "%b %d") +
+  scale_fill_manual(values=fill) +
+  theme_bw() +
+  theme(axis.title.x=element_blank())
+```
+
+
+```{r}
+case_plot <- ggplot() +
+  geom_bar(cov, 
+           mapping=aes(x=Case_Reported_Date, y=n), stat="identity") +
+  geom_smooth(cov,
+              mapping=aes(x=Case_Reported_Date, y=n)) +
+  geom_rect(timeline1,
+            mapping=aes(xmin=Date_start, xmax=Date_end, fill=Restrictions),
+            ymin=-Inf, ymax=Inf, alpha=0.3) +
+  scale_x_date(date_breaks = "1 month", date_labels = "%b %d") +
+  scale_fill_manual(values=fill) +
+  ylab('Daily COVID-19 cases') +
+  xlab('Date') +
+  theme_bw()
+```
+
+```{r}
+comb <- ggpubr::ggarrange(vol_plot, case_plot, ncol = 1, legend='right', common.legend = TRUE)
+comb
+
+ggsave('graphs/vol+cases.png', comb)
+```
+
