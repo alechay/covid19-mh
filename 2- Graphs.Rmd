@@ -12,6 +12,8 @@ library(readxl)
 ```{r}
 weeks <- c('Mar 1 - Mar 7', 'Mar 8 - Mar 14', 'Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2', 'May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6', 'June 7 - June 13', 'June 14 - June 20', 'June 21 - June 27', 'June 28 - July 4', 'July 5 - July 11', 'July 12 - July 18', 'July 19 - July 25', 'July 26 -  Aug 1', 'Aug 2 - Aug 8', 'Aug 9 - Aug 15', 'Aug 16 - Aug 22', 'Aug 23 - Aug 29', 'Aug 30 - Sep 5')
 
+pol_type=c("Assault", "Domestic dispute", "Intoxication", "Suicide attempt", "Total", "Crisis calls")
+
 mh <- read_csv('data/mh_counts.csv') %>% 
   pivot_longer(cols=`Involuntary Form 1`:`Total`, 
                names_to='Type',
@@ -19,11 +21,12 @@ mh <- read_csv('data/mh_counts.csv') %>%
   mutate(Year=factor(Year)) %>% 
   mutate(week=factor(week, levels=weeks))
 pol <- read_csv('data/pol_counts.csv') %>% 
-  pivot_longer(cols=`Suicide attempt`:`Total`, 
+  pivot_longer(cols=`Suicide attempt`:`Crisis calls`, 
                names_to='Type',
                values_to='Count') %>% 
   mutate(Year=factor(Year)) %>% 
-  mutate(week=factor(week, levels=weeks))
+  mutate(week=factor(week, levels=weeks)) %>% 
+  mutate(Type=factor(Type, levels=pol_type))
 
 # volume data
 cmh_ed <- read_excel('data/ED Volume Cambridge.xlsx')
@@ -139,4 +142,3 @@ comb
 
 ggsave('graphs/vol+cases.png', comb)
 ```
-

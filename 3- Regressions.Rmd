@@ -33,6 +33,12 @@ pol <- read_csv('data/pol_counts.csv') %>%
 pol_lock <- pol %>% 
   filter(Restrictions == 'Lockdown')
 
+crisis <- read_csv('data/crisis_counts.csv') %>% 
+  mutate(Year=factor(Year)) %>% 
+  mutate(week=factor(week, levels=weeks, ordered = TRUE))
+crisis_lock <- crisis %>% 
+  filter(Restrictions == 'Lockdown')
+
 cmh_ed <- read_excel('data/ED Volume Cambridge.xlsx')
 grh_ed <- read_excel('data/ED volumes GRH.xlsx')
 smh_ed <- read_excel('data/ED volumes SMH.xlsx')
@@ -111,7 +117,7 @@ sui <- glm(Count ~ Year, data=pol_lock %>% filter(Type=='Suicide attempt'), fami
 int <- glm(Count ~ Year, data=pol_lock %>% filter(Type=='Intoxication'), family='quasipoisson')
 ass <- glm(Count ~ Year, data=pol_lock %>% filter(Type=='Assault'), family='quasipoisson')
 dom <- glm(Count ~ Year, data=pol_lock %>% filter(Type=='Domestic dispute'), family='quasipoisson')
-cri <- glm(Count ~ Year, data=pol_lock %>% filter(Type=='Crisis calls'), family='quasipoisson')
+cri <- glm(`Crisis calls` ~ Year, data=crisis_lock, family='quasipoisson')
 tot <- glm(Count ~ Year, data=pol_lock %>% filter(Type=='Total'), family='quasipoisson')
 
 sui <- data.frame(coef(summary(sui))) %>% slice(2) %>% add_column(Type = 'Suicide attempt', .before = "Estimate")
@@ -121,9 +127,13 @@ dom <- data.frame(coef(summary(dom))) %>% slice(2)%>% add_column(Type = 'Domesti
 cri <- data.frame(coef(summary(cri))) %>% slice(2)%>% add_column(Type = 'Crisis calls', .before = "Estimate")
 tot <- data.frame(coef(summary(tot))) %>% slice(2)%>% add_column(Type = 'Total', .before = "Estimate")
 
-pol_reg_coef <- rbind(sui, int, ass, dom, cri, tot) %>% 
+pol_reg_coef <- rbind(sui, int, ass, dom, tot) %>% 
   rename(`Regression coef.`=Estimate, `P-val(t)`=Pr...t.., `t value`=t.value, `Std. Error`=Std..Error)
 write_csv(pol_reg_coef, 'stat_tests/pol_reg_coef.csv')
+
+cri_reg_coef <- cri %>% 
+  rename(`Regression coef.`=Estimate, `P-val(t)`=Pr...t.., `t value`=t.value, `Std. Error`=Std..Error)
+write_csv(cri_reg_coef, 'stat_tests/cri_reg_coef.csv')
 ```
 
 ```{r}
@@ -197,7 +207,7 @@ dev.off()
 ```
 
 ```{r}
-points=cpts.full(out)[4,] %>% discard(is.na)
+points=cpts.full(out)[2,] %>% discard(is.na)
 bp=levels(pol$week)[points]
 
 bps <- data.frame(break_start=c(levels(pol$week)[1], bp),
@@ -232,6 +242,60 @@ pol_cp <- ggplot() +
 pol_cp
 ```
 
+```{r}
+# l <- loess(Count ~ seq(1, length(weeks), 1), data=pol %>% filter((Year == 2020) & (Type=='Total')))
+crisis2020 <- crisis %>% filter(Year == 2020)
+x <- crisis2020$`Crisis calls`
+
+out=cpt.meanvar(x,pen.value=c(2*log(length(x)),100*log(length(x))),penalty="CROPS",method="PELT", minseglen=4)
+cpts.full(out)
+pen.value.full(out) # gives associated penalty transition points
+# CROPS does not give an optimal set of changepoints thus we may wish to explore further
+plot(out, diagnostic=TRUE, main='Crisis calls') 
+# looks like the segmentation with 4 changepoints, 50,100,150,200 is the most appropriate
+plot(out,ncpts=1, main='Crisis calls changepoints', ylab='Weekly responses', xlab='Week number')
+
+png('graphs/cri_cp.png')
+plot(out, diagnostic=TRUE, main='Crisis calls')
+dev.off()
+```
+
+```{r}
+points=cpts.full(out)[4,] %>% discard(is.na)
+bp=levels(crisis$week)[points]
+
+bps <- data.frame(break_start=c(levels(crisis$week)[1], bp),
+                  fac_start= c(1, points),
+                  break_end=c(bp, levels(crisis$week)[length(levels(crisis$week))]),
+                  fac_end=c(points, length(levels(crisis$week))))
+means = c()
+for (n in 1:nrow(bps)) {
+  x <- crisis2020 %>% 
+    filter((as.integer(week)>=bps$fac_start[n]) & (as.integer(week)<=bps$fac_end[n]))
+  m <- mean(x$`Crisis calls`)
+  means <- c(means, m)
+}
+bps$means = means
+
+fill <- c('Lockdown'='red', 'Easing restrictions'='green')
+
+cri_cp <- ggplot() +
+  geom_line(crisis2020,
+            mapping = aes(x=week, y=`Crisis calls`, group=Year)) +
+  geom_vline(xintercept = bp, linetype = 'dashed', color='blue') +
+  geom_segment(bps,
+               mapping=aes(x=break_start,xend=break_end,y=means,yend=means),
+               color='blue') +
+  geom_rect(timeline,
+            mapping=aes(xmin=Date_start, xmax=Date_end, fill=Restrictions),
+            ymin=-Inf, ymax=Inf, alpha=0.3) +
+  labs(title='Crisis calls changepoints', y='Weekly calls', x='Week') +
+  scale_fill_manual(values=fill) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust=1),
+        axis.title.x=element_blank())
+cri_cp
+```
 
 ```{r}
 # l <- loess(Count ~ seq(1, length(weeks), 1), data=mh %>% filter((Year == 2020) & (Type=='Total')))
@@ -289,7 +353,7 @@ mh_cp
 ```
 
 ```{r}
-comb <- ggpubr::ggarrange(vol_cp ,mh_cp, pol_cp, ncol=1, legend='right', common.legend = TRUE)
+comb <- ggpubr::ggarrange(vol_cp, mh_cp, cri_cp, pol_cp, ncol=1, legend='right', common.legend = TRUE)
 ggsave('graphs/changepoints.png', comb, height = 11, width = 8.5, units = 'in')
 comb
 ```

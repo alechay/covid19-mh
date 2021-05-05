@@ -171,7 +171,7 @@ crisis <- pol %>%
 
 lockdown <- c('Mar 15 - Mar 21', 'Mar 22 - Mar 28', 'Mar 29 - Apr 4', 'Apr 5 - Apr 11', 'Apr 12 - Apr 18', 'Apr 19 - Apr 25', 'Apr 26 - May 2')
 green <- c('May 3 - May 9', 'May 10 - May 16', 'May 17 - May 23', 'May 24 - May 30', 'May 31 - June 6')
-pol_long <- rbind(suicide, pol_alcohol, assault, domestic, crisis)
+pol_long <- rbind(suicide, pol_alcohol, assault, domestic)
 pol_long <- pol_long %>% 
   mutate(Restrictions=case_when(week %in% lockdown ~ 'Lockdown',
                                 week %in% green ~ 'Easing restrictions',
@@ -183,5 +183,18 @@ pol_csv <- pol_long %>%
   pivot_wider(names_from = type, values_from = count) %>% 
   mutate(Total = rowSums(across(where(is.numeric)))) %>% 
   arrange(Year, week)
+
+crisis_csv <- crisis %>% 
+  mutate(Restrictions=case_when(week %in% lockdown ~ 'Lockdown',
+                                week %in% green ~ 'Easing restrictions',
+                                TRUE ~ 'Minimal restrictions')) %>% 
+  mutate(Year = factor(Year, levels=c(2019, 2020))) %>% 
+  mutate(week = factor(week, levels=weeks)) %>% 
+  pivot_wider(names_from = type, values_from = count) %>% 
+  arrange(Year, week)
+
+pol_csv <- pol_csv %>% 
+  left_join(crisis_csv, by=c("Year", "week", "Restrictions"))
 write.csv(pol_csv, 'data/pol_counts.csv')
+write.csv(crisis_csv, 'data/crisis_counts.csv')
 ```
